@@ -4,9 +4,9 @@ One More Thing 是學生的個人學習行動助手：將零散的校園資訊�
 
 ## 核心流程
 
-Capture → Context → Interpret → Proposal → User review → Apply
+輸入資訊 → AI 理解 → 整理成行程／待辦 → 使用者確認 → 加入個人安排
 
-AI 產生的是待審核提案；使用者確認前，不會寫入日常 Event 或 Task。
+AI 會先整理出建議的行程與待辦，只有在使用者確認後，才會正式加入行事曆或待辦清單。
 
 ## 專案結構
 
