@@ -1,0 +1,908 @@
+:root {
+  --md-ref-typeface-brand: var(--display);
+  --md-ref-typeface-plain: var(--body);
+  --md-sys-color-primary: var(--omt-primary);
+  --md-sys-color-on-primary: var(--omt-on-primary);
+  --md-sys-color-primary-container: var(--omt-primary-container);
+  --md-sys-color-on-primary-container: var(--omt-on-primary-container);
+  --md-sys-color-secondary-container: var(--omt-secondary-container);
+  --md-sys-color-on-secondary-container: var(--omt-on-secondary-container);
+  --md-sys-color-tertiary-container: var(--omt-tertiary-container);
+  --md-sys-color-on-tertiary-container: var(--omt-on-tertiary-container);
+  --md-sys-color-surface: var(--omt-surface);
+  --md-sys-color-surface-container: var(--omt-surface-container);
+  --md-sys-color-surface-container-low: var(--omt-surface-container-low);
+  --md-sys-color-surface-container-high: var(--omt-surface-container-high);
+  --md-sys-color-on-surface: var(--omt-on-surface);
+  --md-sys-color-on-surface-variant: var(--omt-on-surface-variant);
+  --md-sys-color-outline: var(--omt-outline);
+  --md-sys-color-outline-variant: var(--omt-outline-variant);
+  --md-icon-font: 'Material Symbols Outlined';
+}
+
+body {
+  background: var(--md-sys-color-background, var(--md-sys-color-surface));
+  color: var(--md-sys-color-on-background, var(--md-sys-color-on-surface));
+  font-family: var(--md-ref-typeface-plain);
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  min-height: 100vh;
+  background: var(--md-sys-color-background, var(--md-sys-color-surface));
+}
+
+.md3-sidebar {
+  align-items: stretch;
+  background: var(--md-sys-color-surface-container);
+  border-right: 1px solid var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  grid-column: 1;
+  grid-row: 1;
+  height: 100vh;
+  padding: 32px 20px 24px;
+  position: sticky;
+  top: 0;
+  width: 240px;
+  z-index: 2;
+}
+
+.md3-sidebar .brand {
+  flex: 0 0 auto;
+  padding: 0 12px;
+}
+
+.md3-sidebar .side-caption {
+  color: var(--md-sys-color-on-surface-variant);
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  margin: -8px 12px 0;
+}
+
+.md3-sidebar .sidebar-bottom {
+  margin-top: auto;
+}
+
+.md3-sidebar .avatar.neutral {
+  background: var(--md-sys-color-surface-container-high);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.md3-sidebar .avatar.neutral md-icon {
+  --md-icon-size: 22px;
+}
+
+.md3-sidebar .avatar-row strong {
+  color: var(--md-sys-color-on-surface);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.md3-sidebar .brand-mark,
+.md3-sidebar em,
+.md3-eyebrow,
+.section-kicker {
+  color: var(--md-sys-color-primary);
+}
+
+.material-nav-rail {
+  --md-navigation-bar-container-color: transparent;
+  --md-navigation-bar-active-indicator-color: var(--md-sys-color-secondary-container);
+  --md-navigation-bar-active-icon-color: var(--md-sys-color-on-secondary-container);
+  --md-navigation-bar-active-label-text-color: var(--md-sys-color-on-surface);
+  --md-navigation-bar-inactive-icon-color: var(--md-sys-color-on-surface-variant);
+  --md-navigation-bar-inactive-label-text-color: var(--md-sys-color-on-surface-variant);
+  --md-navigation-bar-label-text-size: 0.875rem;
+  --md-navigation-bar-label-text-line-height: 1.25rem;
+  --md-navigation-bar-container-height: auto;
+  align-items: stretch;
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 28px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 0;
+  overflow: hidden;
+  padding: 16px 12px 20px;
+  width: 100%;
+}
+
+.material-nav-rail md-navigation-tab {
+  min-height: 64px;
+  margin: 0;
+}
+
+.main-content {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.material-nav-rail md-fab {
+  --md-fab-container-color: var(--md-sys-color-primary);
+  align-self: center;
+  margin: 0 auto 12px;
+}
+
+.mobile-nav-scrim {
+  display: none;
+}
+
+.md3-topbar {
+  position: relative;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  background: var(--md-sys-color-surface);
+}
+
+.topbar-title {
+  color: var(--md-sys-color-on-surface);
+  font: 600 1.375rem var(--display);
+  left: 0;
+  line-height: 1;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.md3-topbar md-app-bar {
+  --md-app-bar-container-color: var(--md-sys-color-surface);
+  --md-app-bar-headline-color: var(--md-sys-color-on-surface);
+  --md-app-bar-headline-size: 1.375rem;
+  min-height: 64px;
+}
+
+.md3-topbar .breadcrumb {
+  display: none;
+}
+
+.md3-app-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.md3-app-actions md-icon-button,
+.md3-month-button {
+  --md-icon-button-icon-color: var(--md-sys-color-on-surface-variant);
+}
+
+.calendar-head h1 {
+  color: var(--md-sys-color-on-surface);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  letter-spacing: -0.04em;
+}
+
+.md3-eyebrow,
+.md3-field-label {
+  display: block;
+  color: var(--md-sys-color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.md3-capture-panel {
+  background: var(--md-sys-color-surface-container-low);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 28px;
+  box-shadow: none;
+}
+
+.md3-capture-panel .quick-note-input {
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 12px;
+  color: var(--md-sys-color-on-surface);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 16px;
+}
+
+.md3-capture-panel .quick-note-input:focus {
+  border: 2px solid var(--md-sys-color-primary);
+  outline: 0;
+}
+
+.md3-capture-panel md-button,
+.md3-capture-panel .md3-upload {
+  --md-button-container-shape: 9999px;
+  font-size: 1rem;
+}
+
+.md3-upload {
+  align-items: center;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 9999px;
+  color: var(--md-sys-color-primary);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 20px;
+}
+
+.md3-upload input {
+  display: none;
+}
+
+.md3-stats-grid {
+  gap: 16px;
+}
+
+.md3-stats-grid .stat-card {
+  box-sizing: border-box;
+  min-height: 132px;
+  padding: 20px 24px;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 12px;
+  background: var(--md-sys-color-surface-container-low);
+}
+
+.md3-stats-grid .stat-card.accent {
+  --md-filled-card-container-color: var(--md-sys-color-primary-container);
+  background: var(--md-sys-color-primary-container);
+}
+
+.md3-stats-grid .stat-card:nth-child(3) {
+  --md-filled-card-container-color: var(--md-sys-color-tertiary-container);
+  background: var(--md-sys-color-tertiary-container);
+}
+
+.md3-stats-grid .stat-card strong {
+  color: var(--md-sys-color-on-surface);
+  display: block;
+  font-size: 2.25rem;
+  font-family: var(--md-ref-typeface-brand);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-top: 10px;
+}
+
+.md3-stats-grid .stat-label,
+.md3-stats-grid .stat-card small {
+  color: var(--md-sys-color-on-surface-variant);
+  display: block;
+  font-size: 0.875rem;
+  margin-top: 8px;
+}
+
+.md3-stats-grid .stat-card.accent .stat-label,
+.md3-stats-grid .stat-card.accent small {
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.md3-stats-grid .stat-card:nth-child(3) .stat-label,
+.md3-stats-grid .stat-card:nth-child(3) small {
+  color: var(--md-sys-color-on-tertiary-container);
+}
+
+.md3-calendar-card,
+.md3-todo-card,
+.source-card {
+  --md-card-container-shape: 12px;
+  --md-card-outline-color: var(--md-sys-color-outline-variant);
+  border-radius: 12px;
+  color: var(--md-sys-color-on-surface);
+}
+
+.md3-calendar-card {
+  background: var(--md-sys-color-surface);
+  padding: 0;
+}
+
+.md3-calendar-card .calendar-toolbar {
+  align-items: center;
+  padding: 24px;
+}
+
+.md3-calendar-card .today-button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 9999px;
+  color: var(--md-sys-color-primary);
+  display: inline-flex;
+  font-family: var(--md-ref-typeface-plain);
+  font-size: 0.875rem;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 20px;
+}
+
+.md3-calendar-card .today-button:hover {
+  background: var(--md-sys-color-surface-container-high);
+}
+
+.calendar-head h1,
+.calendar-toolbar h2,
+.md3-todo-card h2,
+.section-heading h2,
+.source-card h3,
+.timeline-title,
+.sync-card strong {
+  font-family: var(--md-ref-typeface-brand);
+  letter-spacing: -0.03em;
+}
+
+.calendar-head h1 {
+  color: var(--md-sys-color-on-surface);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.calendar-toolbar h2 {
+  color: var(--md-sys-color-on-surface);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.md3-calendar-card .week-labels {
+  background: var(--md-sys-color-surface-container);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.md3-calendar-card .calendar-day {
+  background: var(--md-sys-color-surface);
+  border-color: var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.md3-calendar-card .calendar-day.today > span {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.md3-todo-card {
+  padding: 24px;
+}
+
+.md3-todo-card .add-task-button {
+  --md-button-container-shape: 9999px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.md3-task-checkbox {
+  flex: 0 0 48px;
+  --md-checkbox-selected-container-color: var(--md-sys-color-primary);
+  --md-checkbox-selected-icon-color: var(--md-sys-color-on-primary);
+}
+
+.source-card {
+  --md-filled-card-container-color: var(--md-sys-color-surface);
+  border-radius: 28px;
+  background: var(--md-sys-color-surface);
+  padding: 24px;
+}
+
+.source-card md-button {
+  --md-button-container-shape: 9999px;
+}
+
+.sync-card {
+  --md-button-container-shape: 20px;
+  --md-button-container-height: 64px;
+  --md-button-outline-color: var(--md-sys-color-outline);
+  --md-button-label-text-color: var(--md-sys-color-primary);
+  --md-button-icon-color: var(--md-sys-color-primary);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: var(--md-sys-color-primary);
+  width: 100%;
+}
+
+.md3-dialog {
+  --md-dialog-container-color: var(--md-sys-color-surface);
+  --md-dialog-container-shape: 28px;
+  --md-dialog-headline-color: var(--md-sys-color-on-surface);
+  --md-dialog-headline-size: clamp(1.8rem, 4vw, 2.75rem);
+  --md-dialog-headline-line-height: 1.12;
+  --md-dialog-headline-weight: 700;
+  --md-dialog-supporting-text-color: var(--md-sys-color-on-surface-variant);
+  width: min(720px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 48px);
+}
+
+.md3-dialog-heading {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.md3-dialog-heading > span {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.md3-dialog-heading strong {
+  color: var(--md-sys-color-on-surface);
+  font: inherit;
+  letter-spacing: -0.03em;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.md3-dialog-kicker {
+  color: var(--md-sys-color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.md3-dialog-heading md-icon-button {
+  flex: 0 0 auto;
+  margin: -8px -8px 0 0;
+}
+
+.md3-dialog-content {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+  scrollbar-width: thin;
+}
+
+.auth-status-box,
+.calendar-status-box {
+  background: var(--md-sys-color-surface-container-high);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 12px;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 12px 16px;
+}
+
+.md3-dialog-content md-text-field {
+  display: block;
+  width: 100%;
+}
+
+
+.md3-dialog-content .modal-intro {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.md3-dialog-content .calendar-url-hint {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.875rem;
+  margin-top: -8px;
+}
+
+.md3-dialog-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.md3-dialog-actions md-button {
+  --md-button-container-shape: 9999px;
+}
+
+.auth-md3-dialog {
+  --md-dialog-headline-size: 2rem;
+  width: min(600px, calc(100vw - 32px));
+}
+
+.auth-md3-content {
+  gap: 20px;
+}
+
+.auth-md3-content .modal-intro {
+  max-width: 54ch;
+}
+
+.oauth-actions {
+  display: grid;
+  gap: 12px;
+}
+
+.oauth-md3-button {
+  --md-button-container-height: 56px;
+  --md-button-container-shape: 9999px;
+  --md-button-label-text-size: 0.9375rem;
+  --md-button-label-text-weight: 600;
+  display: block;
+  width: 100%;
+}
+
+.oauth-primary-button {
+  --md-button-container-color: #1f2a2d;
+  --md-button-label-text-color: #ffffff;
+  --md-button-icon-color: #ffffff;
+  --md-button-disabled-container-color: #1f2a2d;
+  --md-button-disabled-container-opacity: 0.52;
+  --md-button-disabled-label-text-color: #ffffff;
+  --md-button-disabled-label-text-opacity: 0.72;
+  --md-button-disabled-icon-color: #ffffff;
+  --md-button-disabled-icon-opacity: 0.72;
+}
+
+.oauth-md3-button .oauth-provider {
+  align-items: center;
+  display: inline-flex;
+  gap: 12px;
+  min-height: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.oauth-md3-button > md-icon[slot='icon'] {
+  position: relative;
+  z-index: 1;
+}
+
+.oauth-md3-button .provider-mark {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  display: inline-flex;
+  height: 32px;
+  justify-content: center;
+  padding: 0;
+  width: 32px;
+}
+
+.oauth-md3-button .provider-mark svg {
+  aspect-ratio: 1;
+  display: block;
+  flex: 0 0 32px;
+  height: 32px;
+  width: 32px;
+}
+
+.oauth-md3-button .github-mark {
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+}
+
+.oauth-md3-button[color='outlined'] .github-mark {
+  color: var(--md-sys-color-on-surface);
+}
+
+.auth-check-card {
+  box-shadow: 0 8px 24px rgba(29, 27, 32, 0.12);
+}
+
+.md3-landing-nav {
+  background: var(--md-sys-color-surface);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  height: 80px;
+}
+
+.md3-landing-nav .landing-nav-actions {
+  gap: 8px;
+}
+
+.md3-landing-nav .landing-nav-actions md-button,
+.landing-hero md-button {
+  --md-button-container-shape: 9999px;
+}
+
+.landing-hero h1 {
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-ref-typeface-brand);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.landing-hero p {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.landing-note {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-ref-typeface-plain);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.md3-landing-orbit {
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 28px;
+  box-shadow: none;
+  color: var(--md-sys-color-on-surface);
+}
+
+.md3-landing-orbit .orbit-card {
+  --md-card-container-shape: 20px;
+  --md-card-outline-color: var(--md-sys-color-outline-variant);
+  box-shadow: none;
+  color: var(--md-sys-color-on-surface);
+  padding: 24px;
+}
+
+.md3-landing-orbit .orbit-card span {
+  color: var(--md-sys-color-primary);
+  font-family: var(--md-ref-typeface-plain);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.md3-landing-orbit .orbit-card strong {
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-ref-typeface-brand);
+  font-size: 1.75rem;
+  line-height: 1.15;
+}
+
+.md3-landing-orbit .orbit-card small {
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-ref-typeface-plain);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.md3-landing-orbit .orbit-task {
+  --md-filled-card-container-color: var(--md-sys-color-primary-container);
+  transform: translate(24px, 36px);
+}
+
+.md3-landing-orbit .orbit-task span {
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.md3-landing-orbit .orbit-line {
+  align-items: center;
+  border: 0;
+  color: var(--md-sys-color-primary);
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  width: 72px;
+}
+
+.md3-landing-orbit .orbit-line md-icon {
+  --md-icon-size: 32px;
+}
+
+.md3-landing-orbit .orbit-star {
+  color: var(--md-sys-color-primary);
+  z-index: 2;
+}
+
+.md3-landing-orbit .orbit-star md-icon {
+  --md-icon-size: 36px;
+}
+
+.md3-landing-strip {
+  border: 0;
+  gap: 16px;
+  padding: 32px 0;
+}
+
+.md3-landing-strip md-card {
+  --md-card-outline-color: var(--md-sys-color-outline-variant);
+  min-height: 180px;
+  padding: 24px;
+}
+
+.md3-landing-strip .landing-number {
+  color: var(--md-sys-color-primary);
+  font-size: 0.75rem;
+  margin-bottom: 20px;
+}
+
+.md3-landing-strip strong {
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-ref-typeface-brand);
+  font-size: 1.375rem;
+}
+
+.md3-landing-strip p {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.9375rem;
+  max-width: none;
+}
+
+.landing-footer-note {
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.875rem;
+}
+
+.landing-footer-note md-icon {
+  --md-icon-size: 24px;
+  color: var(--md-sys-color-primary);
+}
+
+.landing-footer-note strong {
+  color: var(--md-sys-color-on-surface);
+}
+
+@media (max-width: 600px) {
+  .md3-dialog {
+    width: calc(100vw - 24px);
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+  }
+
+  .md3-dialog-content .modal-intro {
+    font-size: 0.9375rem;
+  }
+
+  .auth-md3-dialog {
+    --md-dialog-headline-size: clamp(1.75rem, 8vw, 2rem);
+  }
+
+  .auth-md3-content {
+    gap: 16px;
+  }
+
+  .oauth-md3-button {
+    --md-button-label-text-size: 0.875rem;
+  }
+
+  .md3-dialog-actions {
+    justify-content: stretch;
+  }
+
+  .md3-dialog-actions md-button {
+    flex: 1 1 auto;
+  }
+
+  .md3-landing-nav .landing-nav-actions md-button[color='text'] {
+    display: none;
+  }
+
+  .md3-landing-nav .landing-nav-actions md-button {
+    --md-button-container-height: 40px;
+  }
+
+  .md3-landing-orbit {
+    border-radius: 24px;
+    min-height: 440px;
+  }
+
+  .md3-landing-orbit .orbit-card {
+    width: min(280px, 82vw);
+  }
+
+  .landing-hero p {
+    font-size: 0.9375rem;
+  }
+
+  .landing-note {
+    font-size: 0.875rem;
+  }
+
+  .md3-landing-orbit .orbit-label {
+    font-size: 0.75rem;
+  }
+
+  .md3-landing-orbit .orbit-card strong {
+    font-size: 1.625rem;
+  }
+
+  .md3-landing-orbit .orbit-line {
+    height: 48px;
+    width: 48px;
+  }
+
+  .md3-landing-orbit .orbit-line md-icon {
+    transform: rotate(90deg);
+  }
+
+  .md3-landing-strip {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .md3-landing-strip md-card {
+    min-height: 0;
+  }
+}
+
+.md3-mobile-nav {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    display: block;
+  }
+
+  .md3-sidebar {
+    display: none;
+  }
+
+  .md3-sidebar.open {
+    border-radius: 0 28px 28px 0;
+    box-shadow: 0 12px 32px rgba(29, 27, 32, 0.18);
+    display: flex;
+    height: auto;
+    left: 0;
+    max-height: calc(100dvh - 24px);
+    position: fixed;
+    top: 12px;
+    width: min(248px, calc(100vw - 56px));
+    z-index: 40;
+  }
+
+  .md3-sidebar.open .material-nav-rail {
+    flex: 0 0 auto;
+  }
+
+  .mobile-nav-scrim {
+    background: rgba(29, 27, 32, 0.32);
+    border: 0;
+    display: block;
+    inset: 0;
+    padding: 0;
+    position: fixed;
+    z-index: 39;
+  }
+
+  .md3-mobile-nav {
+    --md-navigation-bar-container-color: var(--md-sys-color-surface-container);
+    --md-navigation-bar-container-height: 80px;
+    bottom: 0;
+    display: flex;
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 20;
+  }
+
+  .main-content {
+    padding-bottom: 96px;
+  }
+}
+
+@media (max-width: 480px) {
+  .md3-sidebar.open {
+    padding: 24px 14px 18px;
+  }
+
+  .md3-sidebar .brand {
+    padding: 0 8px;
+  }
+
+  .md3-sidebar .material-nav-rail {
+    padding: 12px 8px 16px;
+  }
+
+  .md3-sidebar .material-nav-rail md-navigation-tab {
+    min-height: 56px;
+  }
+}
+
+@media (min-width: 901px) {
+  .md3-topbar md-icon-button[aria-label="開啟導覽"] {
+    display: none;
+  }
+}

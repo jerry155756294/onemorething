@@ -1,0 +1,24 @@
+﻿{
+  "name": "one-more-thing-web",
+  "private": true,
+  "license": "WTFPL",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4173",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "test": "node --test src/authWorkflow.test.js src/guestWorkspace.test.js src/captureWorkflow.test.js src/dashboardData.test.js src/taskPresentation.test.js src/calendarData.test.js src/overviewData.test.js src/proposalWorkflow.test.js src/inboxData.test.js src/copyContracts.test.js src/appContracts.test.js src/views/calendarPresentation.test.js src/workspaceNavigation.test.js"
+  },
+  "dependencies": {
+    "material": "github:material-esm/material",
+    "vue": "^3.5.0",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.0",
+    "vite": "^7.0.0"
+  }
+}
+
+

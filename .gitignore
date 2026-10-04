@@ -1,0 +1,25 @@
+# Runtime state / secrets
+.env
+*.env.local
+backend/.env
+backend/data/*
+!backend/data/.gitkeep
+**/credentials.key
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+
+# Python/runtime caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Frontend build/deps
+node_modules/
+dist/
+
+# Local QA artifacts
+qa/
+qa-feedback/
+release/

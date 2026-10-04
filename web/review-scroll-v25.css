@@ -1,0 +1,78 @@
+/* v25 — Proposal review viewport ownership. Imported last on purpose.
+   The dialog is a three-row grid: fixed header / scroll-only body / fixed footer.
+   This file has a new URL so stale cached v24 CSS cannot mask the fix. */
+.proposal-review-layer {
+  box-sizing: border-box;
+  overflow: hidden !important;
+}
+
+.proposal-review-card {
+  box-sizing: border-box;
+  display: grid !important;
+  grid-template-rows: auto minmax(0, 1fr) auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  height: min(760px, calc(100dvh - 48px)) !important;
+  overflow: hidden !important;
+}
+
+.proposal-review-head,
+.proposal-review-actions {
+  min-height: 0;
+  min-width: 0;
+}
+
+.proposal-review-body {
+  min-height: 0 !important;
+  min-width: 0;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.proposal-review-actions {
+  position: relative !important;
+  inset: auto !important;
+  z-index: 5;
+  flex: none !important;
+  background: var(--md-sys-color-surface-container-high, #ece6f0);
+}
+
+@supports not (height: 100dvh) {
+  .proposal-review-card {
+    height: min(760px, calc(100vh - 48px)) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .proposal-review-layer {
+    box-sizing: border-box;
+    padding: 8px 0 0 !important;
+  }
+
+  .proposal-review-card {
+    width: 100% !important;
+    height: calc(100dvh - 8px) !important;
+    max-height: none !important;
+    border-radius: 26px 26px 0 0;
+  }
+
+  .proposal-review-body {
+    padding-bottom: 8px;
+  }
+
+  .proposal-review-actions {
+    padding-bottom: max(14px, env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 900px) and (max-height: 540px) {
+  .proposal-review-card {
+    height: 100dvh !important;
+    border-radius: 0;
+  }
+  .proposal-review-layer {
+    padding-top: 0 !important;
+  }
+}

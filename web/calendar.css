@@ -1,0 +1,43 @@
+/* Calendar + task workspace */
+.calendar-head{display:flex;align-items:flex-end;justify-content:space-between;padding:56px 0 30px;border-bottom:1px solid var(--line)}
+.calendar-head h1{font:600 clamp(42px,5vw,68px) var(--display);line-height:.9;letter-spacing:-3px;margin:15px 0 12px}.calendar-head p{font-size:12px;color:#777;margin:0}.calendar-actions{display:flex;align-items:center;gap:10px}.calendar-actions strong{font:11px var(--mono);min-width:104px;text-align:center}.month-nav{width:34px;height:34px;border:1px solid var(--line);background:#fff;font:20px var(--display);cursor:pointer}.month-nav:hover,.today-button:hover{background:#0b0b0b;color:#fff}.calendar-actions .primary-button{margin-left:16px;padding:11px 15px}
+.capture-panel{display:flex;align-items:center;justify-content:space-between;gap:30px;background:#0b0b0b;color:#fff;padding:22px 25px;margin-top:18px}.capture-copy h2{font:600 25px var(--display);line-height:.95;margin:8px 0}.capture-copy h2 em{font-style:normal;color:var(--lime)}.capture-copy p{font-size:10px;line-height:1.7;color:#bdbdbd;margin:0}.capture-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-width:315px}.capture-text-button,.capture-upload{border:1px solid #fff;background:#fff;color:#0b0b0b;padding:12px 13px;font:10px var(--body);text-align:center;cursor:pointer}.capture-upload{background:transparent;color:#fff}.capture-text-button:hover,.capture-upload:hover{background:var(--lime);border-color:var(--lime);color:#0b0b0b}.capture-upload input{display:none}.capture-actions small{grid-column:1/-1;color:#888;font:9px var(--mono)}
+.calendar-layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(300px,.8fr);gap:22px;padding-top:24px}.calendar-column,.todo-column{min-width:0}.calendar-panel,.todo-panel{border:1px solid var(--line);background:#fff}.calendar-toolbar{display:flex;align-items:flex-end;justify-content:space-between;padding:20px 20px 17px}.calendar-toolbar h2{font:600 25px var(--display);margin:7px 0 0}.today-button{border:1px solid var(--line);background:#fff;padding:8px 11px;font:10px var(--mono);cursor:pointer}.week-labels,.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}.week-labels{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#f7f7f7}.week-labels span{font:10px var(--mono);color:#888;text-align:right;padding:10px 10px 8px}.calendar-day{min-height:82px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:9px 9px 7px;font:11px var(--mono);position:relative}.calendar-day:nth-child(7n){border-right:0}.calendar-day>span{display:inline-grid;place-items:center;width:24px;height:24px}.calendar-day.muted{color:#c5c5c5;background:#fafafa}.calendar-day.today>span{background:#d8ed69;border-radius:50%;color:#0b0b0b}.calendar-day b{display:block;margin-top:10px;background:#0b0b0b;color:#fff;padding:5px 6px;font:9px var(--body);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.calendar-day.today b{background:#e86950}
+.todo-column{display:grid;align-content:start;gap:14px}.todo-panel{padding:19px}.todo-heading{display:flex;align-items:flex-end;justify-content:space-between}.todo-heading h2{font:600 27px var(--display);margin:7px 0 0}.todo-count{font:10px var(--mono);color:#a06b5c}.todo-filter{display:flex;gap:14px;margin:22px 0 14px;border-bottom:1px solid var(--line)}.filter{border:0;background:none;padding:0 0 10px;color:#999;font:10px var(--mono);cursor:pointer}.filter.active{color:#0b0b0b;border-bottom:2px solid #e86950}.todo-panel .task-list{gap:0}.todo-panel .task-item{border-width:0 0 1px;padding:16px 0;background:#fff}.todo-panel .task-item:last-child{border-bottom:0}.todo-panel .task-source{display:none}.add-task-button{width:auto;border:0;background:transparent;color:#67506f;padding:8px 0;margin-top:15px;font:10px var(--body);cursor:pointer}.add-task-button:hover{color:#271533;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.calendar-layout{grid-template-columns:minmax(0,1.35fr) minmax(260px,.8fr)}.calendar-day{min-height:72px}.calendar-day b{font-size:8px;padding:4px}.calendar-actions .primary-button{margin-left:8px}}
+@media(max-width:700px){.calendar-head{display:block;padding:42px 0 24px}.calendar-head h1{font-size:51px}.calendar-head p{line-height:1.7}.calendar-actions{margin-top:22px;justify-content:space-between}.calendar-actions .primary-button{margin-left:0}.capture-panel{display:block;padding:20px;margin-top:15px}.capture-actions{min-width:0;margin-top:18px}.calendar-layout{display:block}.todo-column{margin-top:22px}.calendar-toolbar{padding:16px}.calendar-toolbar h2{font-size:22px}.week-labels span{padding-right:5px}.calendar-day{min-height:62px;padding:5px 4px;font-size:9px}.calendar-day>span{width:20px;height:20px}.calendar-day b{margin-top:5px;padding:3px;font-size:7px}.timeline-heading{margin-top:30px}}
+
+.timeline-item .event-status{margin:0}.today-event-copy{display:grid;gap:4px}.today-event-copy .event-action-row button{white-space:nowrap}.event-action-row button:last-child{color:#526c6b}
+
+
+.route-calendar .calendar-grid{grid-auto-rows:1fr}
+.route-calendar .calendar-day{min-height:76px;position:relative}
+.route-calendar .calendar-day.has-event b.calendar-event-dot{position:absolute;top:auto;right:9px;bottom:9px;width:7px;height:7px;border-radius:50%;background:var(--route-accent);display:block;margin:0;padding:0;overflow:visible;font-size:0;line-height:0}
+.route-calendar .calendar-day.has-event b.calendar-event-count{position:absolute;top:auto;right:6px;bottom:6px;display:inline-grid;place-items:center;min-width:21px;height:19px;margin:0;padding:0 4px;border-radius:999px;background:var(--route-accent);color:#fff;font:600 10px/1 var(--mono)}
+.route-calendar .calendar-day.selected b.calendar-event-count{background:var(--route-ink);color:var(--route-surface)}
+.route-calendar .calendar-day.has-event.today .calendar-event-dot{background:var(--route-ink)}
+.route-calendar .calendar-agenda-range{margin:7px 0 0;color:var(--route-muted);font-size:12px;line-height:1.5}
+.route-calendar .calendar-agenda-item{min-height:0;padding-bottom:24px}
+.route-calendar .calendar-agenda-item .timeline-title,.route-calendar .calendar-agenda-item .timeline-detail,.route-calendar .calendar-agenda-item .timeline-summary{overflow-wrap:anywhere}
+.route-calendar .calendar-agenda-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.route-calendar .calendar-agenda-actions button,.route-calendar .calendar-load-error button,.route-calendar .calendar-source-error button{min-height:44px;border:1px solid var(--route-line);background:var(--route-surface);color:var(--route-ink);padding:8px 12px;font:500 13px var(--body);cursor:pointer}
+.route-calendar .calendar-agenda-actions button:hover,.route-calendar .calendar-load-error button:hover,.route-calendar .calendar-source-error button:hover{border-color:var(--route-accent);background:var(--route-surface-subtle)}
+.route-calendar .calendar-agenda-actions button:focus-visible,.route-calendar .calendar-load-error button:focus-visible,.route-calendar .calendar-source-error button:focus-visible{outline:2px solid var(--route-accent);outline-offset:2px}
+.route-calendar .calendar-agenda-actions button:disabled,.route-calendar .calendar-load-error button:disabled,.route-calendar .calendar-source-error button:disabled{cursor:wait;opacity:.58}
+.route-calendar .calendar-source-error{display:flex;align-items:flex-start;justify-content:flex-start;flex-wrap:wrap;gap:10px 14px;margin-top:8px;border:0;background:transparent;padding:8px 0;color:var(--route-ink);font-size:13px;line-height:1.5}
+.route-calendar .calendar-source-error > span{min-width:0;overflow-wrap:anywhere}
+.route-calendar .calendar-source-error button{flex:0 0 auto}
+
+
+
+.route-calendar .calendar-load-status{margin:12px 0 0;color:var(--route-muted);font-size:13px}
+.route-calendar .calendar-load-error{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:10px 14px;margin:12px 0 0;border:0;background:transparent;padding:8px 0;color:var(--route-ink);font-size:13px;line-height:1.5}
+.route-calendar .calendar-load-error button{flex:0 0 auto}
+@media(max-width:700px){
+  .route-calendar .calendar-day{min-height:54px;padding:6px 4px}
+  .route-calendar .calendar-day.has-event b.calendar-event-dot{right:6px;bottom:6px;width:6px;height:6px}
+  .route-calendar .calendar-day.has-event b.calendar-event-count{right:3px;bottom:3px;min-width:18px;height:17px;font-size:9px}
+  .route-calendar .calendar-agenda-actions{gap:6px}
+  .route-calendar .calendar-load-error{align-items:flex-start}
+  .route-calendar .calendar-source-error{gap:8px}
+}

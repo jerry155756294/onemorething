@@ -1,0 +1,1867 @@
+/* Page 1 product layer. The original Settings surfaces keep their existing shell. */
+.app-shell--omt-v2 {
+  --paper: #fcfbfd;
+  --ink: #1a1b21;
+  --muted: #5d5964;
+  --line: #e7e3ea;
+  --panel: #ffffff;
+  --omt-primary: #5f4a70;
+  --omt-on-primary: #ffffff;
+  --omt-primary-container: #eee6f4;
+  --omt-on-primary-container: #241a2b;
+  --omt-surface: #ffffff;
+  --omt-surface-container: #f4f1f6;
+  --omt-surface-container-low: #faf8fb;
+  --omt-on-surface: #1a1b21;
+  --omt-on-surface-variant: #5d5964;
+  --omt-outline: #766f7d;
+  --omt-outline-variant: #d5d0d9;
+  --omt-error: #ba1a1a;
+  --omt-error-container: #ffdad6;
+  /* Penpot Page 1 supplies composition; Material ESM supplies behavior.
+     Map OMT semantic roles onto MD3 here so primitives do not bring their
+     demo identity into product surfaces. */
+  --md-ref-typeface-brand: var(--display);
+  --md-ref-typeface-plain: var(--body);
+  --md-sys-color-primary: var(--omt-primary);
+  --md-sys-color-on-primary: var(--omt-on-primary);
+  --md-sys-color-primary-container: var(--omt-primary-container);
+  --md-sys-color-on-primary-container: var(--omt-on-primary-container);
+  --md-sys-color-secondary-container: #e7e1eb;
+  --md-sys-color-on-secondary-container: #211c25;
+  --md-sys-color-surface: var(--omt-surface);
+  --md-sys-color-surface-container: var(--omt-surface-container);
+  --md-sys-color-surface-container-low: var(--omt-surface-container-low);
+  --md-sys-color-on-surface: var(--omt-on-surface);
+  --md-sys-color-on-surface-variant: var(--omt-on-surface-variant);
+  --md-sys-color-outline: var(--omt-outline);
+  --md-sys-color-outline-variant: var(--omt-outline-variant);
+  --md-sys-color-error: var(--omt-error);
+  --md-sys-color-error-container: var(--omt-error-container);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body, 'Noto Sans TC', sans-serif);
+  color-scheme: light;
+}
+
+.app-shell--omt-v2 .route-today {
+  --md-ref-typeface-brand: var(--display);
+  --md-ref-typeface-plain: var(--body);
+  --md-sys-color-primary: var(--omt-primary);
+  --md-sys-color-on-primary: var(--omt-on-primary);
+  --md-sys-color-primary-container: var(--omt-primary-container);
+  --md-sys-color-on-primary-container: var(--omt-on-primary-container);
+  --md-sys-color-surface: var(--omt-surface);
+  --md-sys-color-surface-container: var(--omt-surface-container);
+  --md-sys-color-surface-container-low: var(--omt-surface-container-low);
+  --md-sys-color-on-surface: var(--omt-on-surface);
+  --md-sys-color-on-surface-variant: var(--omt-on-surface-variant);
+  --md-sys-color-outline: var(--omt-outline);
+  --md-sys-color-outline-variant: var(--omt-outline-variant);
+}
+
+.omt-v2-grain { display: none; }
+.app-shell--omt-v2 ::selection { background: #e8dcf1; color: #1a1b21; }
+.app-shell--omt-v2 :where(button, a, input, select, textarea):focus-visible {
+  outline: 3px solid #765a8b;
+  outline-offset: 3px;
+}
+.app-shell--omt-v2 :where(button, a, input, select, textarea) { accent-color: #5f4a70; }
+.app-shell--omt-v2 :where(* ) { scrollbar-color: #c6bdcc transparent; scrollbar-width: thin; }
+
+.app-shell--omt-v2 .brand {
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--ink);
+  font: 600 13px/0.94 var(--display, Georgia, serif);
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+.app-shell--omt-v2 .brand span:last-child { display: block; }
+.app-shell--omt-v2 .brand em { color: var(--omt-primary); }
+.app-shell--omt-v2 .brand-mark-svg { width: 24px; height: 24px; overflow: visible; }
+.app-shell--omt-v2 .brand-mark-svg path { fill: none; stroke: var(--omt-primary); stroke-linecap: round; stroke-width: 1.7; }
+.app-shell--omt-v2 .mobile-nav-scrim { display: none; }
+
+.app-shell--omt-v2 .main-content {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  padding: 0 clamp(24px, 3vw, 48px) 64px;
+  background: var(--paper);
+}
+.app-shell--omt-v2 .topbar {
+  position: absolute;
+  z-index: 12;
+  top: 0;
+  right: clamp(24px, 3vw, 48px);
+  left: clamp(24px, 3vw, 48px);
+  height: 66px;
+  justify-content: flex-end;
+  border-bottom: 0;
+  pointer-events: none;
+}
+.app-shell--omt-v2 .topbar md-app-bar,
+.app-shell--omt-v2 .topbar .md3-app-actions,
+.app-shell--omt-v2 .topbar .account-menu-wrap {
+  pointer-events: auto;
+}
+.app-shell--omt-v2 .topbar-title,
+.app-shell--omt-v2 .breadcrumb,
+.app-shell--omt-v2 md-icon-button[slot="leading-icon"] { display: none; }
+.app-shell--omt-v2 md-app-bar {
+  min-height: 52px;
+  background: transparent;
+  --md-app-bar-container-color: transparent;
+  --md-sys-color-surface: #fcfbfd;
+}
+.app-shell--omt-v2 .md3-app-actions { gap: 3px; }
+.app-shell--omt-v2 .md3-app-actions > .account-menu-wrap > md-icon-button { width: 44px; height: 44px; }
+.app-shell--omt-v2 .account-avatar-photo { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; }
+.app-shell--omt-v2 .account-menu-heading { color: var(--ink); }
+.app-shell--omt-v2 .status-banner { margin: 70px 0 0; border-radius: 12px; }
+.app-shell--omt-v2 .workspace-route {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  color: var(--ink);
+}
+.app-shell--omt-v2 .omt-page { padding-top: 62px; }
+.app-shell--omt-v2 .omt-page-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 0 28px;
+  padding: 0;
+  border: 0;
+}
+.app-shell--omt-v2 .omt-page-header h1 {
+  margin: 0;
+  color: var(--ink);
+  font: 600 clamp(2.5rem, 4.3vw, 3.5rem)/1.04 var(--display, Georgia, serif);
+  letter-spacing: -0.025em;
+}
+.app-shell--omt-v2 .today-heading-copy { display: grid; gap: 4px; }
+.app-shell--omt-v2 .omt-date-line {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.4;
+}
+.app-shell--omt-v2 .omt-calendar-month-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 18px;
+}
+.app-shell--omt-v2 .omt-calendar-month-label {
+  color: var(--ink);
+  font: 600 1.12rem/1.4 var(--body, sans-serif);
+  font-variant-numeric: tabular-nums;
+}
+.app-shell--omt-v2 .omt-calendar-month-controls { display: flex; align-items: center; gap: 2px; }
+.app-shell--omt-v2 .calendar-today-action {
+  margin-right: 4px;
+  --md-button-container-shape: 9999px;
+  --md-button-label-text-color: var(--omt-primary);
+}
+.app-shell--omt-v2 .md3-month-button { width: 44px; height: 44px; color: var(--ink); }
+
+/* Capture is the single open intake surface on Today. */
+.app-shell--omt-v2 .today-capture {
+  display: grid;
+  max-width: 980px;
+  gap: 14px;
+  margin: 0 0 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.app-shell--omt-v2 .today-capture h2 {
+  margin: 0;
+  color: var(--ink);
+  font: 600 1.35rem/1.35 var(--body, sans-serif);
+  letter-spacing: -0.02em;
+}
+.app-shell--omt-v2 .capture-composer { display: grid; gap: 8px; }
+.app-shell--omt-v2 .capture-input-surface {
+  display: grid;
+  min-height: 0;
+  gap: 8px;
+}
+.app-shell--omt-v2 .capture-input-surface .capture-composer-textarea {
+  height: 112px;
+  min-height: 112px;
+}
+.app-shell--omt-v2 .capture-input-surface .capture-composer-actions {
+  position: static;
+  z-index: auto;
+  margin: 0;
+  padding-inline: 2px;
+}
+.app-shell--omt-v2 .capture-composer-textarea {
+  width: 100%;
+  min-height: 104px;
+  border-radius: 12px;
+  --md-field-container-color: #ffffff;
+  --md-field-focus-outline-color: #5f4a70;
+  --md-field-label-text-color: #5d5964;
+}
+.app-shell--omt-v2 .capture-composer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+}
+.app-shell--omt-v2 .capture-budget-hint { margin: 0; color: #5d5964; font-size: 0.75rem; line-height: 1.5; }
+.app-shell--omt-v2 .route-today .capture-budget-hint { display: none; }
+.app-shell--omt-v2 .capture-inline-error,
+.app-shell--omt-v2 .omt-inline-error { color: #7d2635; }
+.app-shell--omt-v2 .capture-inline-submit { min-width: 96px; }
+
+/* Shared row language: content first, one quiet divider, no repeated cards. */
+.app-shell--omt-v2 .today-content-grid,
+.app-shell--omt-v2 .omt-home-columns {
+  display: grid;
+  max-width: 996px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 4vw, 56px);
+  padding: 0;
+}
+.app-shell--omt-v2 .today-content-primary,
+.app-shell--omt-v2 .today-content-aside { display: contents; }
+.app-shell--omt-v2 .today-section,
+.app-shell--omt-v2 .overview-calendar-summary,
+.app-shell--omt-v2 .todo-panel,
+.app-shell--omt-v2 .calendar-agenda {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.app-shell--omt-v2 .omt-section-heading,
+.app-shell--omt-v2 .today-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid var(--line);
+}
+.app-shell--omt-v2 .omt-section-heading h2,
+.app-shell--omt-v2 .today-section-heading h2,
+.app-shell--omt-v2 .todo-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font: 600 1.35rem/1.3 var(--display, Georgia, serif);
+  letter-spacing: -0.015em;
+}
+.app-shell--omt-v2 .today-section-subtitle,
+.app-shell--omt-v2 .today-kicker,
+.app-shell--omt-v2 .today-section-note,
+.app-shell--omt-v2 .overview-summary-label,
+.app-shell--omt-v2 .overview-summary-status,
+.app-shell--omt-v2 .overview-event-count,
+.app-shell--omt-v2 .overview-next-event { display: none; }
+.app-shell--omt-v2 .omt-section-date,
+.app-shell--omt-v2 .calendar-agenda-range {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.app-shell--omt-v2 .omt-row-list,
+.app-shell--omt-v2 .today-task-list,
+.app-shell--omt-v2 .omt-task-group,
+.app-shell--omt-v2 .task-list {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.app-shell--omt-v2 .omt-row-list.timeline { position: static; padding: 0; }
+.app-shell--omt-v2 .omt-row-list.timeline::before { display: none; }
+.app-shell--omt-v2 .omt-event-row,
+.app-shell--omt-v2 .omt-task-row {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: minmax(82px, 0.34fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  padding: 14px 6px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  transition: background-color 140ms ease-out;
+}
+.app-shell--omt-v2 button.omt-event-row { cursor: pointer; font: inherit; }
+.app-shell--omt-v2 .omt-event-row:hover,
+.app-shell--omt-v2 .omt-task-row:hover { background: #f6f3f8; }
+.app-shell--omt-v2 .omt-event-row.selected,
+.app-shell--omt-v2 .omt-task-row.selected { background: #f0eaf5; }
+.app-shell--omt-v2 .omt-event-row__time {
+  color: #5d5964;
+  font: 500 0.78rem/1.4 var(--mono, monospace);
+  font-variant-numeric: tabular-nums;
+}
+.app-shell--omt-v2 .omt-event-row__body,
+.app-shell--omt-v2 .omt-task-row__main { display: grid; min-width: 0; gap: 4px; }
+.app-shell--omt-v2 .omt-event-row__title,
+.app-shell--omt-v2 .omt-task-row__title {
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font: 500 0.95rem/1.45 var(--body, sans-serif);
+}
+.app-shell--omt-v2 .omt-event-row__location,
+.app-shell--omt-v2 .omt-task-row__due {
+  overflow-wrap: anywhere;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+.app-shell--omt-v2 .omt-task-row { grid-template-columns: 44px minmax(0, 1fr); gap: 9px; }
+.app-shell--omt-v2 .omt-task-row__main {
+  min-height: 40px;
+  align-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+.app-shell--omt-v2 .omt-task-row__main:focus-visible { outline-offset: 1px; }
+.app-shell--omt-v2 .omt-task-row.done .omt-task-row__title { color: var(--muted); text-decoration: line-through; }
+.app-shell--omt-v2 .today-empty-day { margin: 26px 0 0; color: var(--muted); }
+.app-shell--omt-v2 .omt-section-link { margin: 10px 0 0 -8px; color: var(--omt-primary); }
+.app-shell--omt-v2 .omt-inline-state { margin: 16px 0; color: var(--muted); line-height: 1.6; }
+.app-shell--omt-v2 .today-agenda p.omt-inline-state[role="status"],
+.app-shell--omt-v2 .today-tasks p.omt-inline-state[role="status"] { display: flex; align-items: center; gap: 10px; font-size: 0; }
+.app-shell--omt-v2 .today-agenda p.omt-inline-state[role="status"]::before,
+.app-shell--omt-v2 .today-tasks p.omt-inline-state[role="status"]::before { content: ''; width: 14px; height: 14px; flex: 0 0 14px; border: 2px solid var(--omt-outline-variant); border-top-color: var(--omt-primary); border-radius: 50%; animation: omt-spin .8s linear infinite; }
+.app-shell--omt-v2 .today-agenda p.omt-inline-state[role="status"]::after { content: '正在整理資訊…'; font-size: .9rem; }
+.app-shell--omt-v2 .today-tasks p.omt-inline-state[role="status"]::after { content: '正在整理待辦…'; font-size: .9rem; }
+@keyframes omt-spin { to { transform: rotate(360deg); } }
+.app-shell--omt-v2 .brand { user-select: none; -webkit-user-select: none; }
+.app-shell--omt-v2 .omt-inline-error { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 14px 0; font-size: 0.9rem; line-height: 1.55; }
+
+/* Calendar keeps month + the selected day's full agenda visible together. */
+.app-shell--omt-v2 .route-calendar-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 440px);
+  grid-template-areas: "month agenda" "month detail";
+  align-items: start;
+  gap: clamp(26px, 4vw, 56px);
+  margin: 0;
+  padding: 0;
+}
+.app-shell--omt-v2 .route-calendar-layout > .calendar-panel { grid-area: month; }
+.app-shell--omt-v2 .route-calendar-layout > .calendar-agenda { grid-area: agenda; }
+.app-shell--omt-v2 .calendar-panel {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.app-shell--omt-v2 .calendar-toolbar { display: flex; justify-content: flex-end; margin: 0 0 7px; }
+.app-shell--omt-v2 .today-button {
+  min-height: 40px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--omt-primary);
+  font: 500 0.82rem var(--body, sans-serif);
+  cursor: pointer;
+}
+.app-shell--omt-v2 .week-labels,
+.app-shell--omt-v2 .calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+.app-shell--omt-v2 .week-labels { margin-bottom: 5px; border: 0; background: transparent; color: var(--muted); font-size: 0.78rem; text-align: center; }
+.app-shell--omt-v2 .week-labels span { display: grid; min-width: 0; min-height: 32px; place-items: center; padding: 0 3px; text-align: center; }
+.app-shell--omt-v2 .calendar-grid { border: 0; }
+.app-shell--omt-v2 .md3-calendar-divider {
+  display: none;
+  margin-block: 18px 0;
+  --md-divider-color: var(--omt-outline-variant);
+}
+.app-shell--omt-v2 .calendar-day {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 58px;
+  place-items: start center;
+  padding: 9px 3px 6px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink);
+  font: 500 0.86rem var(--body, sans-serif);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.app-shell--omt-v2 .calendar-day:hover { background: #f3eff6; }
+.app-shell--omt-v2 .calendar-day.muted { color: #77717d; }
+.app-shell--omt-v2 .calendar-day.today > span,
+.app-shell--omt-v2 .calendar-day.selected > span {
+  background: var(--omt-primary-container);
+  color: var(--omt-on-primary-container);
+  font-weight: 700;
+}
+.app-shell--omt-v2 .calendar-day.selected { background: transparent; box-shadow: none; color: var(--omt-on-primary-container); opacity: 1; }
+.app-shell--omt-v2 .calendar-day:focus-visible { outline-offset: -2px; }
+.app-shell--omt-v2 .calendar-event-dot { width: 5px; height: 5px; margin-top: 3px; border-radius: 50%; background: var(--omt-primary); }
+.app-shell--omt-v2 .calendar-event-count { margin-top: 1px; color: var(--omt-primary); font: 500 0.64rem var(--mono, monospace); }
+.app-shell--omt-v2 .calendar-agenda .section-heading { margin: 0 0 8px; padding: 0; border: 0; }
+.app-shell--omt-v2 .calendar-agenda .section-heading h2 { margin: 0; color: var(--ink); font: 600 1.35rem/1.3 var(--display, Georgia, serif); }
+.app-shell--omt-v2 .calendar-agenda-list { padding: 0; }
+.app-shell--omt-v2 .calendar-load-error { justify-content: flex-start; margin: 8px 0 18px; }
+.app-shell--omt-v2 .calendar-load-error md-button,
+.app-shell--omt-v2 .task-list-retry {
+  min-height: 40px;
+  --md-button-container-shape: 9999px;
+  --md-button-label-text-color: var(--omt-primary);
+}
+.app-shell--omt-v2 .calendar-agenda-range { margin-top: 4px; }
+.app-shell--omt-v2 .calendar-event-detail {
+  grid-area: detail;
+  min-width: 0;
+  max-height: calc(100vh - 150px);
+  overflow: auto;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+/* Tasks stays a short personal list. Details move to a neighboring panel. */
+.app-shell--omt-v2 .route-list-panel { display: block; margin: 0; padding: 0; }
+.app-shell--omt-v2 .omt-tasks-layout { display: grid; grid-template-columns: minmax(0, 700px); align-items: start; gap: 34px; }
+.app-shell--omt-v2 .omt-tasks-layout:has(.omt-task-detail-panel) { grid-template-columns: minmax(0, 700px) minmax(320px, 440px); gap: 60px; }
+.app-shell--omt-v2 .omt-task-list-panel { max-width: 700px; }
+.app-shell--omt-v2 .todo-page-header { justify-content: flex-start; }
+.app-shell--omt-v2 .todo-page-heading { display: grid; gap: 5px; }
+.app-shell--omt-v2 .todo-heading { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 8px; }
+.app-shell--omt-v2 .todo-heading--default { min-height: 0; margin: 0; }
+.app-shell--omt-v2 .route-lists .todo-count { margin: 0; color: var(--muted); font-size: 0.82rem; }
+.app-shell--omt-v2 .list-management {
+  margin: 0 0 16px;
+  border: 0;
+  color: var(--muted);
+}
+.app-shell--omt-v2 .list-management > summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: var(--omt-primary);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.app-shell--omt-v2 .list-management > summary::-webkit-details-marker { display: none; }
+.app-shell--omt-v2 .list-management__icon { width: 20px; height: 20px; flex: 0 0 20px; }
+.app-shell--omt-v2 .list-management > summary strong { color: var(--ink); font-weight: 500; }
+.app-shell--omt-v2 .list-management[open] > summary { background: var(--omt-primary-container); color: var(--omt-on-primary-container); }
+.app-shell--omt-v2 .list-management__content {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 14px 0 16px;
+  border-block: 0;
+}
+.app-shell--omt-v2 .list-controls { display: flex; align-items: center; gap: 10px; padding: 0; }
+.app-shell--omt-v2 .list-form > label { display: grid; gap: 6px; color: var(--muted); font-size: 0.82rem; font-weight: 500; }
+.app-shell--omt-v2 .list-form input {
+  min-height: 44px;
+  max-width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--omt-outline-variant);
+  border-radius: 10px 10px 0 0;
+  background: var(--omt-surface-container-low);
+  color: var(--ink);
+  font: inherit;
+  padding: 8px 12px;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+.app-shell--omt-v2 .list-form input:hover { background: var(--omt-surface-container); }
+.app-shell--omt-v2 .list-form input:focus-visible {
+  border-bottom: 2px solid var(--omt-primary);
+  outline: 0;
+}
+.app-shell--omt-v2 .list-picker,
+.app-shell--omt-v2 .omt-detail-select {
+  max-width: 100%;
+  border-radius: 10px 10px 0 0;
+  background: var(--omt-surface-container-low);
+  --md-outlined-select-text-field-container-shape: 10px 10px 0 0;
+  --md-outlined-select-text-field-outline-color: transparent;
+  --md-outlined-select-text-field-hover-outline-color: transparent;
+  --md-outlined-select-text-field-focus-outline-color: var(--omt-primary);
+  --md-outlined-select-text-field-input-text-color: var(--ink);
+  --md-outlined-select-text-field-input-text-font: var(--body);
+  --md-outlined-select-text-field-input-text-size: 0.875rem;
+  --md-outlined-select-text-field-label-text-color: var(--muted);
+  --md-outlined-select-text-field-label-text-font: var(--body);
+  --md-outlined-select-text-field-trailing-icon-color: var(--muted);
+}
+.app-shell--omt-v2 .list-picker { width: min(10rem, 100%); min-width: 0; flex: 0 1 10rem; }
+.app-shell--omt-v2 .omt-detail-select { width: min(100%, 24rem); }
+.app-shell--omt-v2 .list-forms summary,
+.app-shell--omt-v2 .omt-completed-group summary {
+  display: flex;
+  width: fit-content;
+  min-height: 40px;
+  align-items: center;
+  gap: 8px;
+  color: var(--omt-primary);
+  font-size: 0.86rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.app-shell--omt-v2 .list-form { display: grid; gap: 8px; }
+.app-shell--omt-v2 .form-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.app-shell--omt-v2 .form-row > input { flex: 1 1 14rem; min-width: 0; }
+.app-shell--omt-v2 .todo-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 10px 0 8px;
+  border-bottom: 0;
+}
+.app-shell--omt-v2 .todo-filter .filter {
+  min-width: 0;
+  height: 38px;
+  min-height: 38px;
+  padding: 0 2px;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  --md-button-container-shape: 0;
+  --md-button-label-text-color: var(--omt-on-surface-variant);
+  --md-button-hover-state-layer-color: var(--omt-primary);
+}
+.app-shell--omt-v2 .todo-filter .filter.active {
+  border-bottom-color: var(--omt-primary);
+  --md-button-label-text-color: var(--omt-on-surface);
+  --md-button-label-text-weight: 600;
+}
+.app-shell--omt-v2 .todo-filter-content { min-width: 0; }
+.app-shell--omt-v2 .todo-filter-enter-active,
+.app-shell--omt-v2 .todo-filter-leave-active {
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+.app-shell--omt-v2 .todo-filter-enter-from { opacity: 0; transform: translateY(8px); }
+.app-shell--omt-v2 .todo-filter-leave-to { opacity: 0; transform: translateY(-8px); }
+@media (prefers-reduced-motion: reduce) {
+  .app-shell--omt-v2 .todo-filter-enter-active,
+  .app-shell--omt-v2 .todo-filter-leave-active { transition-duration: 1ms !important; }
+}
+.app-shell--omt-v2 .omt-completed-group { margin-top: 18px; border-top: 1px solid var(--line); }
+.app-shell--omt-v2 .omt-completed-group summary { justify-content: flex-start; color: var(--muted); }
+.app-shell--omt-v2 .omt-completed-group summary span { font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+.app-shell--omt-v2 .omt-completed-group .omt-task-row { opacity: 0.8; }
+.app-shell--omt-v2 .omt-empty-state { display: grid; justify-items: start; gap: 8px; padding: 22px 0; color: var(--muted); }
+.app-shell--omt-v2 .omt-empty-state strong { color: var(--ink); font-family: 'Noto Sans TC', sans-serif; font-weight: 600; }
+.app-shell--omt-v2 .omt-empty-state > span { max-width: 58ch; line-height: 1.6; }
+.app-shell--omt-v2 .task-list-feedback { margin: 12px 0; }
+
+/* Detail information is deliberate and secondary to the row. */
+.app-shell--omt-v2 .omt-detail-panel {
+  min-width: 0;
+  max-height: calc(100vh - 148px);
+  overflow: auto;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #ffffff;
+}
+.app-shell--omt-v2 .omt-detail-content { display: grid; gap: 18px; min-width: 0; }
+.app-shell--omt-v2 .omt-detail-heading { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+.app-shell--omt-v2 .omt-detail-heading-copy { display: grid; gap: 5px; min-width: 0; }
+.app-shell--omt-v2 .omt-detail-eyebrow { color: var(--muted); font: 500 0.74rem/1.3 var(--body, sans-serif); }
+.app-shell--omt-v2 .omt-detail-heading h2 { margin: 0; color: var(--ink); font: 600 1.35rem/1.35 var(--display, Georgia, serif); overflow-wrap: anywhere; }
+.app-shell--omt-v2 .omt-detail-close { width: 44px; height: 44px; flex: 0 0 44px; --md-icon-button-icon-color: var(--omt-on-surface-variant); }
+.app-shell--omt-v2 .omt-detail-close .app-icon { width: 22px; height: 22px; }
+.app-shell--omt-v2 .omt-detail-facts { display: grid; gap: 12px; margin: 0; }
+.app-shell--omt-v2 .omt-detail-facts > div { display: grid; gap: 4px; }
+.app-shell--omt-v2 .omt-detail-facts dt,
+.app-shell--omt-v2 .omt-detail-field { color: var(--muted); font-size: 0.78rem; }
+.app-shell--omt-v2 .omt-detail-facts dd { margin: 0; color: var(--ink); font-size: 0.9rem; line-height: 1.55; overflow-wrap: anywhere; }
+.app-shell--omt-v2 .omt-detail-note { display: grid; gap: 8px; margin: 0; color: var(--ink); font-size: 0.9rem; line-height: 1.65; overflow-wrap: anywhere; }
+.app-shell--omt-v2 .omt-detail-note p { margin: 0; white-space: pre-wrap; }
+.app-shell--omt-v2 .omt-detail-field { display: grid; gap: 7px; }
+.app-shell--omt-v2 .omt-detail-source { display: grid; gap: 8px; }
+.app-shell--omt-v2 .omt-detail-source md-button,
+.app-shell--omt-v2 .omt-detail-error md-button {
+  width: fit-content;
+  min-height: 40px;
+  --md-button-container-shape: 9999px;
+  --md-button-label-text-color: var(--omt-primary);
+}
+.app-shell--omt-v2 .omt-detail-error { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; color: #7d2635; font-size: 0.84rem; line-height: 1.5; }
+.app-shell--omt-v2 .omt-detail-actions { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 14px; border-top: 1px solid var(--line); }
+.app-shell--omt-v2 .omt-detail-primary-action { --md-button-container-shape: 9999px; }
+.app-shell--omt-v2 .omt-detail-danger-action { --md-button-label-text-color: var(--md-sys-color-error, #ba1a1a); }
+.omt-mobile-detail-dialog,
+.proposal-review-dialog {
+  --paper: #fcfbfd;
+  --ink: #1a1b21;
+  --muted: #5d5964;
+  --line: #e7e3ea;
+  --panel: #ffffff;
+  --omt-primary: #5f4a70;
+  color: var(--ink);
+}
+.omt-mobile-detail-dialog { width: min(560px, calc(100vw - 32px)); max-width: 560px; max-height: min(82dvh, 760px); border-radius: 16px; }
+.omt-mobile-detail-dialog [slot="headline"] { min-height: 0; padding: 0; }
+.omt-mobile-detail-dialog [slot="content"] { max-height: calc(82dvh - 36px); overflow: auto; padding: 20px; }
+.proposal-review-dialog { width: min(560px, calc(100vw - 32px)); max-width: 560px; max-height: min(84dvh, 820px); border-radius: 20px; --md-dialog-container-shape: 20px; --md-dialog-container-elevation: 2; }
+.proposal-review-dialog .proposal-dialog-heading { min-height: 64px; align-items: start; }
+.proposal-review-dialog .proposal-dialog-heading h2 { margin: 0; }
+.proposal-review-dialog .proposal-dialog-count { margin: 4px 0 0; color: var(--muted); font: 400 0.78rem/1.4 var(--body, sans-serif); }
+.proposal-review-dialog .proposal-review-content { max-height: calc(84dvh - 136px); overflow: auto; padding: 8px 20px 18px; }
+.proposal-review-dialog .proposal-source { display: grid; gap: 9px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.proposal-review-dialog .proposal-source-summary { display: flex; align-items: center; justify-content: flex-end; min-height: 40px; color: var(--muted); font-size: 0.79rem; }
+.proposal-review-dialog .proposal-source-link {
+  flex: 0 0 auto;
+  min-height: 40px;
+  --md-button-container-shape: 9999px;
+  --md-button-label-text-color: var(--omt-primary);
+}
+.proposal-review-dialog .proposal-source-link .app-icon { width: 20px; height: 20px; }
+.proposal-review-dialog .proposal-source-heading { display: flex; justify-content: space-between; gap: 12px; color: var(--ink); }
+.proposal-review-dialog .proposal-source-heading span { color: var(--muted); font-size: 0.78rem; }
+.proposal-review-dialog .proposal-groups { display: grid; gap: 16px; }
+.proposal-review-dialog .proposal-group { display: grid; gap: 5px; }
+.proposal-review-dialog .proposal-group-heading { display: flex; justify-content: space-between; gap: 12px; margin: 0; padding: 0 0 6px; color: var(--muted); font: 500 0.8rem/1.4 var(--body, sans-serif); }
+.proposal-review-dialog .proposal-group-heading span { font-size: 0.75rem; }
+.proposal-review-dialog .proposal-items { display: grid; }
+.proposal-review-dialog .proposal-item { display: grid; gap: 8px; padding: 12px 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; box-shadow: none; }
+.proposal-review-dialog .proposal-item-topline { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 0.74rem; }
+.proposal-review-dialog .proposal-collapsed-summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.proposal-review-dialog .proposal-collapsed-main {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.proposal-review-dialog .proposal-collapsed-main--task { grid-template-columns: 22px minmax(0, 1fr); }
+.proposal-review-dialog .proposal-summary-copy { min-width: 0; }
+.proposal-review-dialog .proposal-summary-time {
+  color: var(--ink);
+  font: 500 0.98rem/1.35 var(--body, sans-serif);
+  font-variant-numeric: tabular-nums;
+}
+.proposal-review-dialog .proposal-summary-task-marker {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  border: 1.5px solid var(--omt-outline, #766f7d);
+  border-radius: 4px;
+}
+.proposal-review-dialog .proposal-collapsed-summary h3,
+.proposal-review-dialog .proposal-item > h3 { margin: 0; color: var(--ink); font: 500 0.96rem/1.4 var(--body, sans-serif); overflow-wrap: anywhere; }
+.proposal-review-dialog .proposal-collapsed-summary p,
+.proposal-review-dialog .proposal-facts { margin: 3px 0 0; color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+.proposal-review-dialog .proposal-collapsed-summary p:empty { display: none; }
+.proposal-review-dialog .proposal-facts { display: grid; gap: 4px; }
+.proposal-review-dialog .proposal-facts > div { display: flex; flex-wrap: wrap; gap: 4px 7px; }
+.proposal-review-dialog .proposal-facts dt { color: var(--muted); }
+.proposal-review-dialog .proposal-facts dt::after { content: ':'; }
+.proposal-review-dialog .proposal-facts dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+.proposal-review-dialog .proposal-review-note { display: grid; gap: 3px; margin: 8px 0; color: #6b4c17; font-size: 0.8rem; line-height: 1.5; }
+.proposal-review-dialog .proposal-collapsed-actions { display: flex; flex: 0 0 auto; gap: 5px; }
+.proposal-review-dialog .proposal-collapsed-actions .proposal-text-action { min-height: 40px; padding: 6px 8px; }
+.proposal-review-dialog .proposal-item-actions { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+.proposal-review-dialog .proposal-primary-action,
+.proposal-review-dialog .proposal-secondary-action { min-height: 44px; --md-button-container-shape: 9999px; }
+.proposal-review-dialog .proposal-dialog-actions { position: sticky; bottom: 0; display: flex; justify-content: space-between; gap: 10px; padding: 12px 20px calc(12px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); background: #fcfbfd; }
+.proposal-review-dialog .proposal-primary-action { min-width: 150px; }
+.app-shell--omt-v2 :where(input, select, textarea) { caret-color: #5f4a70; }
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .app-shell--omt-v2 .calendar-event-detail {
+    position: static;
+    width: auto;
+    max-height: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-shell--omt-v2 { display: block; height: auto; min-height: 100dvh; padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+  .app-shell--omt-v2 .sidebar,
+  .app-shell--omt-v2 .mobile-nav-scrim { display: none; }
+  .app-shell--omt-v2 .main-content { height: auto; min-height: 100dvh; overflow-y: visible; overscroll-behavior-y: auto; padding: 0 clamp(18px, 4vw, 32px) 30px; }
+  .app-shell--omt-v2 .topbar { left: 18px; right: 18px; height: 58px; justify-content: flex-end; }
+  .app-shell--omt-v2 .topbar md-app-bar { display: flex; width: auto; min-width: 0; }
+  .app-shell--omt-v2 .topbar md-icon-button[slot="leading-icon"] { display: none; }
+  .app-shell--omt-v2 .md3-app-actions > .account-menu-wrap > md-icon-button { width: 44px; height: 44px; }
+  .app-shell--omt-v2 .workspace-route { width: 100%; }
+  .app-shell--omt-v2 .omt-page { padding-top: 24px; }
+  .app-shell--omt-v2 .omt-page-header { align-items: center; margin-bottom: 22px; }
+  .app-shell--omt-v2 .omt-page-header h1 { font-size: clamp(2.1rem, 10vw, 2.7rem); }
+  .app-shell--omt-v2 .today-capture { max-width: none; gap: 11px; margin-bottom: 30px; }
+  .app-shell--omt-v2 .today-capture h2 { font-size: 1.13rem; }
+  .app-shell--omt-v2 .capture-composer-textarea { min-height: 94px; }
+  .app-shell--omt-v2 .capture-composer-actions { align-items: center; }
+  .app-shell--omt-v2 .capture-budget-hint { font-size: 0.69rem; }
+  .app-shell--omt-v2 .today-content-grid,
+  .app-shell--omt-v2 .omt-home-columns,
+  .app-shell--omt-v2 .omt-tasks-layout,
+  .app-shell--omt-v2 .omt-tasks-layout:has(.omt-task-detail-panel) { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .app-shell--omt-v2 .omt-section-heading h2,
+  .app-shell--omt-v2 .today-section-heading h2,
+  .app-shell--omt-v2 .todo-heading h2,
+  .app-shell--omt-v2 .calendar-agenda .section-heading h2 { font-size: 1.24rem; }
+  .app-shell--omt-v2 .omt-event-row { grid-template-columns: minmax(70px, 0.32fr) minmax(0, 1fr); gap: 10px; padding: 13px 3px; }
+  .app-shell--omt-v2 .omt-task-row { grid-template-columns: 44px minmax(0, 1fr); padding: 10px 2px; }
+  .app-shell--omt-v2 .calendar-head {
+    align-items: start;
+    display: flex;
+    padding: 0;
+  }
+  .app-shell--omt-v2 .calendar-head h1 {
+    min-width: max-content;
+    white-space: nowrap;
+  }
+  .app-shell--omt-v2 .omt-calendar-month-row { margin-bottom: 12px; gap: 10px; }
+  .app-shell--omt-v2 .omt-calendar-month-label { font-size: 1rem; }
+  .app-shell--omt-v2 .omt-calendar-month-controls { gap: 0; }
+  .app-shell--omt-v2 .calendar-today-action { display: none; }
+  .app-shell--omt-v2 .md3-month-button { width: 40px; height: 40px; }
+  .app-shell--omt-v2 .route-calendar-layout,
+  .app-shell--omt-v2 .route-calendar-layout.has-selected-event { grid-template-columns: minmax(0, 1fr); grid-template-areas: "month" "agenda"; gap: 24px; }
+  .app-shell--omt-v2 .week-labels { font-size: 0.7rem; }
+  .app-shell--omt-v2 .md3-calendar-divider { display: flex; }
+  .app-shell--omt-v2 .calendar-day { min-height: 44px; padding-top: 6px; border-radius: 8px; font-size: 0.79rem; }
+  .app-shell--omt-v2 .calendar-agenda .section-heading { margin-bottom: 7px; }
+  .app-shell--omt-v2 .route-lists .todo-count { font-size: 0.75rem; }
+  .app-shell--omt-v2 .list-controls { flex-wrap: wrap; }
+  .app-shell--omt-v2 .list-picker { width: 100%; }
+  .app-shell--omt-v2 .form-row { align-items: stretch; }
+  .app-shell--omt-v2 .form-row > md-button { flex: 0 0 auto; }
+  .app-shell--omt-v2 .todo-filter { gap: 3px; }
+  .app-shell--omt-v2 .omt-detail-panel { display: none; }
+  .omt-mobile-detail-dialog { width: calc(100vw - 24px); max-width: 560px; max-height: 80dvh; margin: auto 12px 12px; border-radius: 16px; }
+  .omt-mobile-detail-dialog [slot="content"] { max-height: calc(80dvh - 32px); padding: 18px; }
+  .proposal-review-dialog { width: min(350px, calc(100vw - 40px)); max-width: 350px; max-height: min(80dvh, 704px); margin: auto; border-radius: 20px; }
+  .proposal-review-dialog .proposal-review-content { max-height: calc(80dvh - 128px); padding: 7px 16px 14px; }
+  .proposal-review-dialog .proposal-dialog-actions { padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); }
+  .proposal-review-dialog .proposal-group-heading { padding-bottom: 5px; }
+  .proposal-review-dialog .proposal-item { padding: 10px 0; }
+  .proposal-review-dialog .proposal-collapsed-summary { align-items: start; }
+  .proposal-review-dialog .proposal-collapsed-actions { flex-direction: column; align-items: end; }
+  .proposal-review-dialog .proposal-primary-action { min-width: 128px; }
+}
+
+@media (max-width: 600px) {
+  .omt-mobile-detail-dialog {
+    width: 100vw;
+    max-width: none;
+    max-height: min(72dvh, 620px);
+    margin: auto 0 0;
+    border-radius: 20px 20px 0 0;
+    --md-dialog-container-shape: 20px 20px 0 0;
+  }
+  .omt-mobile-detail-dialog [slot="content"] {
+    position: relative;
+    max-height: min(72dvh, 620px);
+    padding: 32px 24px calc(24px + env(safe-area-inset-bottom, 0px));
+  }
+  .omt-mobile-detail-dialog [slot="content"]::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: 48px;
+    height: 4px;
+    border-radius: 999px;
+    transform: translateX(-50%);
+    background: var(--omt-outline-variant, #d5d0d9);
+  }
+  .omt-mobile-detail-dialog--editor {
+    width: calc(100vw - 28px);
+    max-width: 560px;
+    max-height: calc(100dvh - 68px);
+    margin: 34px auto;
+    border-radius: 20px;
+    --md-dialog-container-shape: 20px;
+  }
+  .omt-mobile-detail-dialog--editor [slot="content"] {
+    max-height: calc(100dvh - 68px);
+    padding: 0 20px 20px;
+  }
+  .omt-mobile-detail-dialog--editor [slot="content"]::before { display: none; }
+}
+
+/* Intermediate widths keep the desktop rail but give page content a mobile-
+   like single-column composition before the actual mobile breakpoint. */
+@media (min-width: 901px) and (max-width: 1100px) {
+  .app-shell--workspace.app-shell--omt-v2 .route-calendar-layout,
+  .app-shell--workspace.app-shell--omt-v2 .route-calendar-layout.has-selected-event {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "month" "agenda" "detail";
+    gap: 32px;
+  }
+
+  .app-shell--workspace.app-shell--omt-v2 .today-content-grid,
+  .app-shell--workspace.app-shell--omt-v2 .omt-home-columns,
+  .app-shell--workspace.app-shell--omt-v2 .omt-tasks-layout,
+  .app-shell--workspace.app-shell--omt-v2 .omt-tasks-layout:has(.omt-task-detail-panel) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .app-shell--workspace.app-shell--omt-v2 .today-content-grid,
+  .app-shell--workspace.app-shell--omt-v2 .omt-home-columns,
+  .app-shell--workspace.app-shell--omt-v2 .omt-tasks-layout,
+  .app-shell--workspace.app-shell--omt-v2 .omt-tasks-layout:has(.omt-task-detail-panel) {
+    grid-template-areas: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .app-shell--omt-v2 .main-content { padding-inline: 14px; }
+  .app-shell--omt-v2 .capture-composer-actions { gap: 4px; }
+  .app-shell--omt-v2 .capture-composer-actions md-button { min-width: 0; }
+  .app-shell--omt-v2 .calendar-day { min-height: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell--omt-v2 .omt-event-row,
+  .app-shell--omt-v2 .omt-task-row { transition-duration: 1ms; }
+}
+
+/* Shared shell contract: Settings is the source of truth for the rail
+   surface, capsule color, and icon contrast used by every workspace route. */
+.app-shell--workspace {
+  --workspace-paper: #ffffff;
+  --workspace-rail-surface: #fbf8ff;
+  --workspace-rail-active: #dedbf5;
+  --workspace-rail-hover: #ede8f4;
+  --workspace-rail-icon: #4d4650;
+  --workspace-rail-icon-active: #271533;
+  --paper: var(--workspace-paper);
+  --ink: #1d1b20;
+  --muted: var(--workspace-rail-icon);
+  --line: #e7e0eb;
+  --panel: var(--workspace-rail-surface);
+  background: var(--workspace-paper);
+  color: #1d1b20;
+}
+
+.app-shell--workspace .main-content {
+  position: relative;
+  background: var(--workspace-paper);
+}
+
+/* Workspace account access lives in the top-right corner on every workspace
+   route, including Settings. Keep it independent from page content width. */
+.app-shell--workspace .topbar {
+  position: absolute;
+  z-index: 20;
+  top: 8px;
+  right: clamp(18px, 2.4vw, 36px);
+  left: auto;
+  width: auto;
+  height: 52px;
+  justify-content: flex-end;
+  border-bottom: 0;
+  pointer-events: none;
+}
+
+.app-shell--workspace .topbar md-app-bar,
+.app-shell--workspace .topbar .md3-app-actions,
+.app-shell--workspace .topbar .account-menu-wrap {
+  pointer-events: auto;
+}
+
+.app-shell--workspace .topbar md-app-bar {
+  display: flex;
+  width: auto;
+  min-width: 0;
+  min-height: 52px;
+  background: transparent;
+  --md-app-bar-container-color: transparent;
+}
+
+.app-shell--workspace .topbar-title,
+.app-shell--workspace .breadcrumb {
+  display: none;
+}
+
+.app-shell--workspace #account-menu-button {
+  width: 44px;
+  height: 44px;
+}
+
+
+/* Workspace navigation has one source of truth: the rail or mobile bottom
+   bar. Do not expose a duplicate hamburger menu at tablet widths. */
+.app-shell--workspace .topbar md-icon-button[slot="leading-icon"] {
+  display: none !important;
+}
+
+.app-shell--workspace .brand-mark-svg path {
+  stroke: var(--workspace-rail-icon-active);
+}
+
+.app-shell--workspace .brand-mark-svg {
+  width: 24px;
+  height: 24px;
+  overflow: visible;
+}
+
+.app-shell--workspace .brand {
+  color: var(--workspace-rail-icon-active);
+}
+
+.app-shell--workspace .brand > span:last-child {
+  display: block;
+}
+
+.app-shell--workspace .app-icon {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.app-shell--workspace .omt-page-enter-active,
+.app-shell--workspace .omt-page-leave-active {
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.app-shell--workspace .omt-page-enter-from,
+.app-shell--workspace .omt-page-leave-to {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell--workspace .omt-page-enter-active,
+  .app-shell--workspace .omt-page-leave-active {
+    animation: none !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .app-shell--workspace {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    height: 100dvh;
+    min-height: 0;
+  }
+
+  .app-shell--workspace .sidebar {
+    position: sticky;
+    z-index: 12;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: start;
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    height: 100dvh;
+    min-height: 0;
+    flex: 0 0 100px;
+    gap: 20px;
+    padding: 24px 10px;
+    border-right: 0;
+    background: var(--workspace-rail-surface);
+    box-shadow: none;
+    overflow-x: hidden;
+  }
+
+  .app-shell--workspace .brand {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    box-sizing: border-box;
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    min-height: 62px;
+    flex: 0 0 62px;
+    margin: 0;
+    padding: 0;
+    transform: none !important;
+    font: 600 15px / 0.94 var(--display, Georgia, serif);
+    text-align: center;
+  }
+
+  .app-shell--workspace .brand-mark-svg {
+    width: 24px;
+    min-width: 24px;
+    max-width: 24px;
+    height: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    flex: 0 0 24px;
+    transform: none !important;
+  }
+
+  .app-shell--workspace .workspace-main {
+    height: 100dvh;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+  }
+
+  .app-shell--workspace .material-nav-rail {
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    display: flex;
+    width: 80px;
+    min-width: 80px;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+  }
+
+  .app-shell--workspace .material-nav-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .app-shell--workspace .workspace-nav-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+  .app-shell--workspace .workspace-rail-item {
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    width: 80px;
+    min-width: 80px;
+    flex: 0 0 64px;
+    height: 64px;
+    min-height: 64px;
+    margin: 0;
+    padding: 4px 0 2px;
+    border: 0;
+    border-radius: 14px;
+    background: transparent;
+    color: var(--workspace-rail-icon);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
+    font: inherit;
+    text-align: center;
+  }
+
+  .app-shell--workspace .workspace-rail-item__indicator {
+    box-sizing: border-box;
+    width: 56px;
+    height: 32px;
+    border-radius: 9999px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    box-shadow: none;
+    transition: background-color 120ms ease, box-shadow 120ms ease;
+  }
+
+  .app-shell--workspace .workspace-rail-item:not(.workspace-rail-item--active) .workspace-rail-item__indicator {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .app-shell--workspace .workspace-rail-item:not(.workspace-rail-item--active):hover .workspace-rail-item__indicator {
+      background: var(--workspace-rail-hover);
+    }
+  }
+
+  .app-shell--workspace .workspace-rail-item__label {
+    display: block;
+    max-width: 76px;
+    overflow: hidden;
+    color: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .app-shell--workspace .workspace-rail-item .workspace-nav-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+  }
+
+  .app-shell--workspace .workspace-rail-item--active {
+    color: var(--workspace-rail-icon-active);
+    font-weight: 600;
+  }
+
+  .app-shell--workspace .workspace-rail-item--active .workspace-rail-item__indicator {
+    background: var(--workspace-rail-active);
+    box-shadow: none;
+  }
+
+  .app-shell--workspace .workspace-rail-item:focus-visible {
+    outline: 2px solid var(--workspace-rail-icon-active);
+    outline-offset: -2px;
+  }
+}
+
+
+/* The desktop rail keeps a stable brand and item rhythm at every zoom.
+   With only three destinations, internal scrolling is sufficient for short viewports. */
+
+@media (max-width: 900px) {
+  .app-shell--workspace .topbar {
+    top: max(6px, env(safe-area-inset-top, 0px));
+    right: max(10px, env(safe-area-inset-right, 0px));
+  }
+
+  .app-shell--workspace {
+    display: block;
+    min-height: 100dvh;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .app-shell--workspace .sidebar {
+    display: none;
+  }
+
+  .app-shell--workspace .workspace-main {
+    height: auto;
+    min-height: 100dvh;
+    overflow-y: visible;
+  }
+
+  .app-shell--workspace .mobile-nav {
+    border-top-color: #e7e0eb;
+    background: var(--workspace-rail-surface);
+    box-shadow: none;
+  }
+}
+
+/* Page 1 section handoff links live in the headings, not beneath each list. */
+.app-shell--omt-v2 .omt-section-heading-link {
+  min-height: 36px;
+  margin: -7px -8px -7px 0;
+  --md-button-container-shape: 9999px;
+  --md-button-label-text-color: var(--omt-primary);
+}
+
+@media (max-width: 900px) {
+  .app-shell--omt-v2 .omt-section-heading-link {
+    display: none;
+  }
+}
+
+.app-shell--omt-v2 .calendar-agenda-count {
+  color: var(--omt-on-surface-variant);
+  font: 500 0.78rem/1.4 var(--body, sans-serif);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Compact destructive confirmations share one MD3 surface contract. */
+md-dialog.omt-destructive-dialog {
+  width: min(360px, calc(100vw - 32px));
+  max-width: 360px;
+  --md-dialog-container-shape: 16px;
+  --md-dialog-container-elevation: 1;
+  color: var(--md-sys-color-on-surface);
+  background: var(--md-sys-color-surface);
+}
+
+.omt-destructive-dialog [slot="headline"] {
+  padding: 16px 20px 4px;
+}
+
+.omt-destructive-dialog [slot="headline"] h2 {
+  margin: 0;
+  color: var(--md-sys-color-on-surface);
+  font: 600 1.15rem/1.35 var(--display);
+}
+
+.omt-destructive-dialog [slot="content"] {
+  padding: 0 20px 8px;
+}
+
+.omt-destructive-dialog [slot="content"] p {
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  line-height: 1.45;
+}
+
+.omt-destructive-dialog [slot="content"] :is(.event-editor-error, .task-delete-error) {
+  margin-top: 8px;
+  color: var(--md-sys-color-error, #ba1a1a);
+}
+
+.omt-destructive-dialog [slot="actions"] {
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px 16px 12px;
+}
+
+.omt-destructive-dialog :is(.event-delete-confirm-action, .task-delete-confirm-action, .account-delete-confirm-action) {
+  --md-button-container-color: var(--md-sys-color-error, #ba1a1a);
+  --md-button-label-text-color: var(--md-sys-color-on-error, #fff);
+}
+
+@media (max-width: 600px) {
+  md-dialog.omt-destructive-dialog {
+    width: min(326px, calc(100vw - 32px));
+  }
+}
+
+/* 2026-09-30 workspace stability follow-up --------------------------------- */
+/* The account trigger is viewport-anchored, not content-anchored.  This keeps
+   it from drifting when page max-width, route layout, zoom, or scrollbars
+   change. */
+.app-shell--workspace .topbar {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  right: calc(12px + env(safe-area-inset-right, 0px));
+  left: auto !important;
+  width: 52px;
+  min-width: 52px;
+  max-width: 52px;
+  height: 52px;
+  margin: 0;
+  padding: 0;
+  transform: none;
+}
+.app-shell--workspace .topbar md-app-bar,
+.app-shell--workspace .topbar .md3-app-actions,
+.app-shell--workspace .topbar .account-menu-wrap {
+  width: 52px;
+  min-width: 52px;
+  max-width: 52px;
+  margin: 0;
+  padding: 0;
+}
+.app-shell--workspace .topbar .md3-app-actions {
+  display: grid;
+  place-items: center;
+}
+.app-shell--workspace #account-menu-button {
+  display: grid;
+  place-items: center;
+  margin: 4px;
+  flex: 0 0 44px;
+}
+@media (max-width: 900px) {
+  .app-shell--workspace .topbar {
+    top: max(6px, env(safe-area-inset-top, 0px));
+    right: max(8px, env(safe-area-inset-right, 0px));
+    left: auto !important;
+  }
+}
+
+/* When an Event is selected on a landscape desktop, the detail inspector owns
+   the right column; month + agenda remain in the left column. */
+@media (min-width: 901px) and (min-aspect-ratio: 7/5) {
+  .app-shell--workspace.app-shell--omt-v2 .route-calendar-layout.has-selected-event {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 440px);
+    grid-template-areas:
+      "month detail"
+      "agenda detail";
+    align-items: start;
+  }
+  .app-shell--workspace.app-shell--omt-v2 .route-calendar-layout.has-selected-event .calendar-event-detail {
+    position: sticky;
+    top: 28px;
+    max-height: calc(100dvh - 56px);
+  }
+}
+
+/* Portrait-ish desktop windows stack the inspector below the agenda. */
+@media (min-width: 901px) and (max-aspect-ratio: 7/5) {
+  .app-shell--workspace.app-shell--omt-v2 .route-calendar-layout,
+  .app-shell--workspace.app-shell--omt-v2 .route-calendar-layout.has-selected-event {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "month" "agenda" "detail";
+    gap: 32px;
+  }
+  .app-shell--workspace.app-shell--omt-v2 .calendar-event-detail {
+    position: static;
+    width: auto;
+    max-height: none;
+  }
+}
+
+/* Mobile Event detail behaves like a bottom sheet: it enters from below and
+   the visible handle can be swiped upward to expand it. */
+@media (max-width: 600px) {
+  .omt-mobile-detail-dialog:not(.omt-mobile-detail-dialog--editor) {
+    transition: max-height 180ms ease, margin 180ms ease, translate 140ms ease;
+  }
+  .omt-mobile-detail-dialog:not(.omt-mobile-detail-dialog--editor) {
+    translate: 0 var(--omt-sheet-drag-offset, 0px);
+  }
+  .omt-mobile-detail-dialog--dragging:not(.omt-mobile-detail-dialog--editor) {
+    transition: none !important;
+  }
+
+  .omt-mobile-detail-dialog:not(.omt-mobile-detail-dialog--editor) .omt-mobile-sheet-content {
+    animation: omt-mobile-sheet-in 180ms cubic-bezier(.2, .8, .2, 1);
+    transition: max-height 180ms ease;
+  }
+  .omt-mobile-detail-dialog--expanded:not(.omt-mobile-detail-dialog--editor) {
+    max-height: 94dvh;
+    margin-top: 6dvh;
+  }
+  .omt-mobile-detail-dialog--expanded:not(.omt-mobile-detail-dialog--editor) [slot="content"] {
+    max-height: 94dvh;
+  }
+  .omt-mobile-sheet-handle {
+    display: grid;
+    width: 100%;
+    height: 32px;
+    margin: -24px 0 6px;
+    padding: 0;
+    place-items: center;
+    border: 0;
+    background: transparent;
+    touch-action: none;
+    cursor: ns-resize;
+  }
+  .omt-mobile-sheet-handle > span {
+    width: 48px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--omt-outline-variant, #d5d0d9);
+  }
+  /* The handle is now a real control; remove the old decorative pseudo handle. */
+  .omt-mobile-detail-dialog [slot="content"]::before { display: none !important; }
+  @keyframes omt-mobile-sheet-in {
+    from { opacity: 0; transform: translateY(36px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .omt-mobile-detail-dialog .omt-mobile-sheet-content { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+}
+
+/* Workspace account trigger owns its own fixed viewport anchor.  Do not let
+   md-app-bar flex/layout or page width participate in its position. */
+.app-shell--workspace .topbar {
+  pointer-events: none;
+  background: transparent;
+}
+.app-shell--workspace .workspace-account-anchor {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  right: calc(12px + env(safe-area-inset-right, 0px));
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  z-index: 72;
+  pointer-events: auto;
+  isolation: isolate;
+}
+.app-shell--workspace .workspace-account-anchor .account-menu-wrap,
+.app-shell--workspace .workspace-account-anchor #account-menu-button {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  max-width: 44px;
+  margin: 0;
+  padding: 0;
+  transform: none !important;
+}
+
+/* Task ↔ Calendar Event is an OMT-only index. Keep the reverse index visually
+   lightweight: it is context, not another card or Calendar payload. */
+.omt-detail-related-tasks {
+  display: grid;
+  gap: 8px;
+  margin: 4px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in srgb, var(--omt-outline-variant) 70%, transparent);
+}
+.omt-detail-related-tasks h3 {
+  margin: 0;
+  font-size: .875rem;
+  font-weight: 650;
+}
+.omt-detail-related-tasks ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.omt-detail-related-tasks li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.omt-detail-related-tasks small {
+  flex: 0 0 auto;
+  color: var(--omt-on-surface-variant);
+  font-size: .75rem;
+}
+
+/* 2026-09-30 interaction/runtime fixes ------------------------------------ */
+/* The account popover is intentionally not paint-contained. */
+
+/* Calendar day state: both today and selected dates are circular, never a
+   square inherited from the older calendar stylesheet. */
+.app-shell--omt-v2 .calendar-day > span {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+}
+.app-shell--omt-v2 .calendar-day.today > span,
+.app-shell--omt-v2 .calendar-day.selected > span {
+  border-radius: 999px;
+}
+.app-shell--omt-v2 .calendar-day.has-event b.calendar-event-count {
+  min-width: 24px;
+  height: 18px;
+  padding: 0 6px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--omt-surface-container);
+  color: var(--omt-primary);
+  font: 650 .66rem/18px var(--body, sans-serif);
+  letter-spacing: -.01em;
+}
+.app-shell--omt-v2 .calendar-day.selected b.calendar-event-count {
+  background: var(--omt-primary-container);
+  color: var(--omt-on-primary-container);
+}
+
+/* Month navigation uses directional motion while keeping the calendar's
+   footprint stable. */
+.app-shell--omt-v2 .calendar-grid-stage {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+.app-shell--omt-v2 .calendar-month-next-enter-active,
+.app-shell--omt-v2 .calendar-month-next-leave-active,
+.app-shell--omt-v2 .calendar-month-prev-enter-active,
+.app-shell--omt-v2 .calendar-month-prev-leave-active {
+  transition: opacity 150ms ease, transform 150ms cubic-bezier(.2,.8,.2,1);
+}
+.app-shell--omt-v2 .calendar-month-next-enter-from { opacity: 0; transform: translateX(18px); }
+.app-shell--omt-v2 .calendar-month-next-leave-to { opacity: 0; transform: translateX(-18px); }
+.app-shell--omt-v2 .calendar-month-prev-enter-from { opacity: 0; transform: translateX(-18px); }
+.app-shell--omt-v2 .calendar-month-prev-leave-to { opacity: 0; transform: translateX(18px); }
+
+/* List management expands as content, not as a sudden browser <details>
+   jump. The summary remains stationary while the controls fade/slide in. */
+.app-shell--omt-v2 .list-management[open] > .list-management__content {
+  transform-origin: top center;
+  animation: omt-list-management-in 160ms cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes omt-list-management-in {
+  from { opacity: 0; transform: translateY(-8px) scaleY(.98); }
+  to { opacity: 1; transform: translateY(0) scaleY(1); }
+}
+
+@media (max-width: 900px) {
+  .app-shell--omt-v2 .todo-filter { gap: 12px; margin-top: 16px; }
+  .app-shell--omt-v2 .list-management { margin-bottom: 20px; }
+  .app-shell--omt-v2 .list-management > summary { padding-inline: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell--omt-v2 .calendar-month-next-enter-active,
+  .app-shell--omt-v2 .calendar-month-next-leave-active,
+  .app-shell--omt-v2 .calendar-month-prev-enter-active,
+  .app-shell--omt-v2 .calendar-month-prev-leave-active,
+  .app-shell--omt-v2 .list-management[open] > .list-management__content {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+
+/* Account popover is owned by the workspace shell instead of md-menu's anchor
+   portal. This prevents a visible-but-inert avatar when custom-element popup
+   positioning/paint containment disagrees with a fixed responsive anchor. */
+.app-shell--workspace .account-menu-wrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+.app-shell--workspace .account-menu-panel {
+  position: fixed;
+  top: calc(64px + env(safe-area-inset-top, 0px));
+  right: calc(12px + env(safe-area-inset-right, 0px));
+  z-index: 1000;
+  width: min(248px, calc(100vw - 24px));
+  padding: 10px;
+  border: 1px solid color-mix(in srgb, var(--omt-outline-variant) 72%, transparent);
+  border-radius: 16px;
+  background: var(--omt-surface-container-lowest, #fff);
+  box-shadow: 0 10px 28px rgba(31, 29, 35, .18);
+}
+.app-shell--workspace .account-menu-panel .account-menu-heading {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px 10px;
+}
+.app-shell--workspace .account-menu-panel .account-menu-heading span {
+  color: var(--omt-on-surface-variant);
+  font-size: .78rem;
+}
+.app-shell--workspace .account-menu-panel .account-menu-divider {
+  height: 1px;
+  margin: 0 4px 6px;
+  background: var(--omt-outline-variant);
+}
+.app-shell--workspace .account-menu-panel .account-menu-action {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  --md-button-container-shape: 10px;
+}
+.app-shell--workspace .account-menu-panel .account-menu-danger {
+  color: var(--omt-error, #ba1a1a);
+}
+.account-popover-enter-active,
+.account-popover-leave-active {
+  transition: opacity 120ms ease, transform 120ms cubic-bezier(.2,.8,.2,1);
+}
+.account-popover-enter-from,
+.account-popover-leave-to {
+  opacity: 0;
+  transform: translateY(-6px) scale(.98);
+}
+@media (prefers-reduced-motion: reduce) {
+  .account-popover-enter-active,
+  .account-popover-leave-active { transition-duration: 1ms !important; }
+}
+
+/* 2026-09-30 interaction polish follow-up ---------------------------------- */
+/* Keep focus feedback tight to the control. The selected surface remains
+   visibly outlined without the detached halo that looked unrelated to it. */
+.app-shell--omt-v2 .event-editor-control:focus-visible {
+  border-width: 1px;
+  border-color: var(--omt-primary, #5f4a70);
+  padding: 10px 12px;
+  outline: 2px solid var(--omt-primary, #5f4a70);
+  outline-offset: 1px;
+}
+.app-shell--omt-v2 .capture-composer-textarea:focus-within {
+  border-radius: 13px;
+  outline: 2px solid var(--omt-primary, #5f4a70);
+  outline-offset: 1px;
+}
+
+/* material-esm/material 3.1.x intentionally morphs expressive buttons to an
+   8px pressed shape. That reads well on touch, but feels like a shape glitch
+   under a mouse. Keep ripple/state-layer feedback on fine pointers and replace
+   the shape morph with a very small physical press. Touch keeps the library's
+   native expressive behaviour. */
+@media (hover: hover) and (pointer: fine) {
+  .app-shell--omt-v2 md-button {
+    transition: transform 90ms cubic-bezier(.2, .8, .2, 1);
+  }
+  .app-shell--omt-v2 md-button[pressed] {
+    border-radius: var(--md-button-container-shape, 9999px) !important;
+    transform: translateY(1px) scale(.985);
+  }
+  .app-shell--omt-v2 .todo-filter .filter[pressed] {
+    border-radius: 0 !important;
+  }
+}
+
+/* Todo starts immediately after the page heading instead of reserving an
+   extra header band. */
+.app-shell--omt-v2 .route-lists .omt-page-header {
+  margin-bottom: 2px;
+}
+.app-shell--omt-v2 .route-lists .todo-page-heading { gap: 2px; }
+
+/* Personal-list disclosure is an actual compact button-sized affordance. */
+.app-shell--omt-v2 .list-management > summary {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--omt-outline-variant);
+  border-radius: 999px;
+  background: var(--omt-surface-container-low);
+  color: var(--omt-primary);
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background-color 120ms ease, border-color 120ms ease, transform 90ms ease;
+}
+.app-shell--omt-v2 .list-management > summary:hover {
+  border-color: color-mix(in srgb, var(--omt-primary) 34%, var(--omt-outline-variant));
+  background: var(--omt-surface-container);
+}
+.app-shell--omt-v2 .list-management > summary:active { transform: scale(.985); }
+.app-shell--omt-v2 .list-management[open] > summary {
+  width: fit-content;
+  border-color: transparent;
+  background: var(--omt-primary-container);
+  color: var(--omt-on-primary-container);
+}
+.app-shell--omt-v2 .list-management > summary :is(span, strong),
+.app-shell--omt-v2 .todo-filter .filter {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Selects use a quiet filled-field treatment. Opening/selecting a personal
+   list no longer leaves a large framed focus rectangle; keyboard focus is
+   still visible as the Material-style bottom indicator. */
+.app-shell--omt-v2 .list-picker,
+.app-shell--omt-v2 .omt-detail-select {
+  width: 100%;
+  min-width: 0;
+  --md-outlined-select-text-field-focus-outline-color: transparent;
+  --md-outlined-select-text-field-outline-color: transparent;
+  --md-outlined-select-text-field-hover-outline-color: transparent;
+  box-shadow: inset 0 -1px var(--omt-outline-variant);
+  outline: 0;
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+}
+.app-shell--omt-v2 .list-picker:focus-within,
+.app-shell--omt-v2 .omt-detail-select:focus-within {
+  outline: 0;
+  box-shadow: inset 0 -2px var(--omt-primary);
+}
+.app-shell--omt-v2 .list-picker { max-width: 24rem; }
+.app-shell--omt-v2 .omt-detail-content { gap: 14px; }
+
+/* Event editor schedule is one compact block: date and times share a row,
+   all-day pairs date + toggle instead of leaving an empty grid cell. */
+.app-shell--omt-v2 .event-editor-fields { gap: 12px; }
+.app-shell--omt-v2 .event-editor-field--date,
+.app-shell--omt-v2 .event-editor-time-group { align-self: stretch; }
+.app-shell--omt-v2 .event-editor-time-help,
+.app-shell--omt-v2 .event-editor-validation { margin-top: -2px; }
+
+/* Month transitions overlay the outgoing month instead of stacking it below
+   the incoming month. Clicking an adjacent-month date intentionally uses a
+   shorter transition than the explicit previous/next controls. */
+.app-shell--omt-v2 .calendar-grid-stage > .calendar-grid { width: 100%; }
+.app-shell--omt-v2 :is(
+  .calendar-month-next-leave-active,
+  .calendar-month-prev-leave-active,
+  .calendar-month-next-fast-leave-active,
+  .calendar-month-prev-fast-leave-active
+) {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+}
+.app-shell--omt-v2 .calendar-month-next-fast-enter-active,
+.app-shell--omt-v2 .calendar-month-next-fast-leave-active,
+.app-shell--omt-v2 .calendar-month-prev-fast-enter-active,
+.app-shell--omt-v2 .calendar-month-prev-fast-leave-active {
+  transition: opacity 85ms ease, transform 85ms cubic-bezier(.2,.8,.2,1);
+}
+.app-shell--omt-v2 .calendar-month-next-fast-enter-from { opacity: 0; transform: translateX(12px); }
+.app-shell--omt-v2 .calendar-month-next-fast-leave-to { opacity: 0; transform: translateX(-12px); }
+.app-shell--omt-v2 .calendar-month-prev-fast-enter-from { opacity: 0; transform: translateX(-12px); }
+.app-shell--omt-v2 .calendar-month-prev-fast-leave-to { opacity: 0; transform: translateX(12px); }
+
+/* Review is now a compact confirmation surface. Per-item results and source
+   replay are intentionally absent; errors remain inline and actionable. */
+.proposal-review-dialog {
+  width: min(520px, calc(100vw - 32px));
+  max-width: 520px;
+  max-height: min(78dvh, 720px);
+}
+.proposal-review-dialog .proposal-dialog-heading {
+  min-height: 56px;
+  padding-bottom: 4px;
+}
+.proposal-review-dialog .proposal-review-content {
+  max-height: calc(78dvh - 126px);
+  padding-top: 4px;
+}
+.proposal-review-dialog .proposal-dialog-actions {
+  gap: 8px;
+  justify-content: flex-end;
+}
+.proposal-review-dialog .proposal-primary-action { min-width: 132px; }
+
+/* Bottom-sheet drag uses GPU transform with a hard upper boundary.
+   Expanded is the only top snap point, so a second upward drag cannot move
+   the sheet farther up the viewport, even temporarily. */
+@media (max-width: 600px) {
+  .omt-mobile-detail-dialog:not(.omt-mobile-detail-dialog--editor) {
+    translate: none;
+    transform: translate3d(0, var(--omt-sheet-drag-offset, 0px), 0);
+    will-change: transform;
+    transition: max-height 190ms cubic-bezier(.2,.8,.2,1), margin 190ms cubic-bezier(.2,.8,.2,1), transform 170ms cubic-bezier(.2,.8,.2,1);
+  }
+  .omt-mobile-detail-dialog--dragging:not(.omt-mobile-detail-dialog--editor) {
+    transition: none !important;
+  }
+  .proposal-review-dialog {
+    width: 100vw;
+    max-width: none;
+    max-height: min(88dvh, 760px);
+    margin: auto 0 0;
+    border-radius: 20px 20px 0 0;
+    --md-dialog-container-shape: 20px 20px 0 0;
+  }
+  .proposal-review-dialog .proposal-dialog-heading {
+    min-height: 58px;
+    padding: 16px 18px 6px;
+  }
+  .proposal-review-dialog .proposal-review-content {
+    max-height: calc(88dvh - 126px);
+    padding: 4px 18px 12px;
+  }
+  .proposal-review-dialog .proposal-dialog-actions {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+  .proposal-review-dialog .proposal-primary-action { width: 100%; min-width: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell--omt-v2 .calendar-month-next-fast-enter-active,
+  .app-shell--omt-v2 .calendar-month-next-fast-leave-active,
+  .app-shell--omt-v2 .calendar-month-prev-fast-enter-active,
+  .app-shell--omt-v2 .calendar-month-prev-fast-leave-active,
+  .omt-mobile-detail-dialog:not(.omt-mobile-detail-dialog--editor) {
+    transition-duration: 1ms !important;
+  }
+}
+
+/* 2026-10-01 mobile/list follow-up --------------------------------------- */
+/* The personal-list picker stays compact and gives its value the same inner
+   breathing room as the rest of the filled-field controls. */
+.app-shell--omt-v2 .list-picker {
+  width: min(10rem, 100%);
+  max-width: 10rem;
+  flex: 0 1 10rem;
+  --md-outlined-field-leading-space: 18px;
+  --md-outlined-field-trailing-space: 14px;
+}
+
+@media (max-width: 600px) {
+  /* Expanded is a hard upper snap point. Upward drag is clamped in JS, while
+     downward drag remains GPU-transformed and follows the pointer. */
+  .omt-mobile-detail-dialog:not(.omt-mobile-detail-dialog--editor) {
+    overscroll-behavior: contain;
+  }
+  .omt-mobile-detail-dialog:not(.omt-mobile-detail-dialog--editor) [slot="content"] {
+    overscroll-behavior-y: contain;
+  }
+  .omt-mobile-detail-dialog--editor [slot="content"] {
+    padding-top: 0;
+  }
+}
+
+
+/* v11 auth modal: controlled surface, no Material dialog scroller. */
+.auth-modal-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+.auth-modal-layer::-webkit-scrollbar { display: none; }
+.auth-modal-scrim {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  background: rgba(31, 27, 32, .38);
+  cursor: default;
+}
+.auth-modal-card {
+  position: relative;
+  z-index: 1;
+  width: min(540px, calc(100vw - 32px));
+  margin: auto;
+  overflow: visible;
+  border: 1px solid var(--md-sys-color-outline-variant, #cac4d0);
+  border-radius: 28px;
+  background: var(--md-sys-color-surface-container-high, #ece6f0);
+  box-shadow: 0 18px 52px rgba(31, 27, 32, .18);
+}
+.auth-modal-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 22px 8px 26px;
+}
+.auth-modal-heading h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 4vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+.auth-modal-content { padding: 12px 26px 26px; }
+.auth-modal-content .modal-intro { margin: 0 0 20px; color: var(--md-sys-color-on-surface-variant, #49454f); line-height: 1.65; }
+.auth-modal-content .oauth-actions { display: grid; gap: 10px; margin: 0; }
+.auth-modal-content .oauth-md3-button { width: 100%; }
+.auth-modal-content .auth-provider-hint { margin: 12px 0 0; }
+html:has(.auth-modal-layer),
+body:has(.auth-modal-layer) {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+@media (max-width: 620px) {
+  .auth-modal-layer { align-items: start; padding: max(14px, env(safe-area-inset-top, 0px)) 8px 14px; }
+  .auth-modal-card { width: 100%; border-radius: 24px; }
+  .auth-modal-heading { padding: 18px 14px 6px 20px; }
+  .auth-modal-content { padding: 10px 20px 22px; }
+}
