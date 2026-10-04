@@ -32,7 +32,3 @@ cd web
 npm install
 npm run dev
 `
-
-## 版本與範圍
-
-此原始碼快照標示為 v1。正式 AI 服務、端對端加密、WebDAV、原生行動端與學校平台整合不在此版本已驗證範圍內。
