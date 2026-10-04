@@ -10,7 +10,7 @@ AI 產生的是待審核提案；使用者確認前，不會寫入日常 Event �
 
 ## 專案結構
 
-- ackend/：FastAPI 後端
+- backend/：FastAPI 後端
 - web/：Vue 3 + Vite 前端
 - LICENSE：本專案自有程式碼採 WTFPL 第 2 版；第三方依賴依其各自授權條款
 
