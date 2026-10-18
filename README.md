@@ -1,5 +1,6 @@
 ﻿# One More Thing v1（廢搞！）
-
+# Holy Shit it just a AI Slop
+<img width="498" height="475" alt="image" src="https://github.com/user-attachments/assets/8f14621d-5cbf-4d95-864f-ba9a7a07f303" />
 One More Thing 是學生的個人學習行動助手：將零散的校園資訊結合個人行事曆與待辦脈絡，整理成可檢查、可修改、由使用者確認後才套用的行動。
 
 ## 核心流程
